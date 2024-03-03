@@ -65,7 +65,6 @@
 		7E9B9B792B749851003D8607 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B782B749851003D8607 /* Destination.swift */; };
 		7E9B9B7D2B749EB3003D8607 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */; };
 		7E9B9B7F2B74A666003D8607 /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */; };
-		7E9B9B812B74AB6E003D8607 /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B802B74AB6E003D8607 /* Sight.swift */; };
 		7E9B9BA12B7B0618003D8607 /* Stardom-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9B832B7B0617003D8607 /* Stardom-Regular.otf */; };
 		7E9B9BA22B7B0618003D8607 /* Tanker-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9B842B7B0617003D8607 /* Tanker-Regular.otf */; };
 		7E9B9BA32B7B0618003D8607 /* Bevellier-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9B862B7B0617003D8607 /* Bevellier-BlackItalic.otf */; };
@@ -216,7 +215,6 @@
 		7E9B9B782B749851003D8607 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
 		7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingView.swift; sourceTree = "<group>"; };
-		7E9B9B802B74AB6E003D8607 /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 		7E9B9B832B7B0617003D8607 /* Stardom-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stardom-Regular.otf"; sourceTree = "<group>"; };
 		7E9B9B842B7B0617003D8607 /* Tanker-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tanker-Regular.otf"; sourceTree = "<group>"; };
 		7E9B9B862B7B0617003D8607 /* Bevellier-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bevellier-BlackItalic.otf"; sourceTree = "<group>"; };
@@ -371,7 +369,6 @@
 		7E8CA5D72B6223E3006A2ABE = {
 			isa = PBXGroup;
 			children = (
-				7E9B9B802B74AB6E003D8607 /* Sight.swift */,
 				7E8CA5E22B6223E3006A2ABE /* TravelCoach */,
 				7E8CA5F32B6223E4006A2ABE /* TravelCoachTests */,
 				7E8CA5FD2B6223E4006A2ABE /* TravelCoachUITests */,
@@ -912,7 +909,6 @@
 				7E8A4F2E2B8BF3730075EB11 /* AllEventsSelectionView.swift in Sources */,
 				7EDD78882B924BF500469E77 /* LoadingItineraryView.swift in Sources */,
 				7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */,
-				7E9B9B812B74AB6E003D8607 /* Sight.swift in Sources */,
 				7E8CA6452B6A38E5006A2ABE /* VenueDetailsView.swift in Sources */,
 				7E8CA6342B68A1FB006A2ABE /* QCategory.swift in Sources */,
 				7E8CA6372B68A346006A2ABE /* Configuration.swift in Sources */,
