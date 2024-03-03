@@ -1,0 +1,72 @@
+{
+  "categories": [
+    {
+      "category": "Art",
+      "events": [
+        "Visit the National Gallery of Ireland",
+        "Explore the Irish Museum of Modern Art",
+        "Dublin City Gallery The Hugh Lane"
+      ]
+    },
+    {
+      "category": "Nature",
+      "events": [
+        "Stroll through Phoenix Park",
+        "Discover the Dublin Botanic Gardens",
+        "Explore the Wicklow Mountains National Park"
+      ]
+    },
+    {
+      "category": "Sports",
+      "events": [
+        "Catch a game at Aviva Stadium",
+        "Visit Croke Park for a tour or match",
+        "Golfing at Portmarnock Golf Club"
+      ]
+    },
+    {
+      "category": "Dining",
+      "events": [
+        "Taste traditional Irish cuisine in Temple Bar",
+        "Seafood dining at Howth",
+        "Visit the Guinness Storehouse for a brewery tour and dining"
+      ]
+    },
+    {
+      "category": "Entertainment",
+      "events": [
+        "Experience a live music session in a traditional Irish pub",
+        "Attend a performance at the Abbey Theatre",
+        "Visit the Bord Gáis Energy Theatre for a show"
+      ]
+    },
+    {
+      "category": "Festival",
+      "events": [
+        "Unfortunately, no specific festival information available for these dates."
+      ]
+    },
+    {
+      "category": "Event",
+      "events": [
+        "Unfortunately, no specific event information available for these dates."
+      ]
+    },
+    {
+      "category": "Historic Places",
+      "events": [
+        "Tour of Kilmainham Gaol",
+        "Visit Dublin Castle",
+        "Explore Trinity College and see the Book of Kells"
+      ]
+    },
+    {
+      "category": "Amusement Centers",
+      "events": [
+        "Family fun at Dublin Zoo",
+        "Adventure at Fort Lucan Outdoor Adventureland",
+        "Exploration at the National Leprechaun Museum"
+      ]
+    }
+  ]
+}

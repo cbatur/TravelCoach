@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Tanker-Regular.otf</string>
+		<string>Stardom-Regular.otf</string>
+		<string>BespokeStencil-Regular.otf</string>
+		<string>Bevellier-Regular.otf</string>
+		<string>Bevellier-Meduim.otf</string>
+		<string>Bevellier-Bold.otf</string>
+		<string>Boska-Regular.otf</string>
+		<string>Boska-Black.otf</string>
+		<string>Satoshi-Regular.otf</string>
+		<string>Satoshi-Bold.otf</string>
+		<string>Excon-Regular.otf</string>
+		<string>Excon-Medium.otf</string>
+		<string>Excon-Bold.otf</string>
+	</array>
+</dict>
+</plist>

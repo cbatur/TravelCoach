@@ -1,0 +1,157 @@
+[
+    {
+        "title": "Day 1: Arrival and Exploring the Heart of Dublin",
+        "activities": [
+            {
+                "title": "Check-in at The Shelbourne Dublin",
+                "categories": ["checkin"]
+            },
+            {
+                "title": "Lunch at The Woollen Mills Eating House",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Visit to Trinity College and The Book of Kells",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Dinner at Chapter One",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Evening stroll through Temple Bar area",
+                "categories": ["nightlife"]
+            }
+        ]
+    },
+    {
+        "title": "Day 2: Cultural Immersion",
+        "activities": [
+            {
+                "title": "Breakfast at Queen of Tarts",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Visit to Dublin Castle",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Lunch at The Brazen Head",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Tour of the Guinness Storehouse",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Dinner at The Pig's Ear",
+                "categories": ["restaurant"]
+            }
+        ]
+    },
+    {
+        "title": "Day 3: Day Trip to the Irish Countryside",
+        "activities": [
+            {
+                "title": "Morning train to Wicklow Mountains",
+                "categories": ["train", "nature"]
+            },
+            {
+                "title": "Hiking and exploring Glendalough",
+                "categories": ["nature"]
+            },
+            {
+                "title": "Lunch at The Wicklow Heather Restaurant",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Evening train back to Dublin",
+                "categories": ["train"]
+            },
+            {
+                "title": "Dinner at Fade Street Social",
+                "categories": ["restaurant"]
+            }
+        ]
+    },
+    {
+        "title": "Day 4: Literary Dublin and Relaxation",
+        "activities": [
+            {
+                "title": "Breakfast at Brother Hubbard North",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Visit to the James Joyce Centre",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Lunch at The Winding Stair",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Afternoon at the Dublin Writers Museum",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Dinner and live music at The Cobblestone",
+                "categories": ["restaurant", "nightlife"]
+            }
+        ]
+    },
+    {
+        "title": "Day 5: Nature and History",
+        "activities": [
+            {
+                "title": "Breakfast at The Fumbally",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Visit to Phoenix Park and Dublin Zoo",
+                "categories": ["nature"]
+            },
+            {
+                "title": "Lunch at The Phoenix Café",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Afternoon at the National Museum of Ireland - Archaeology",
+                "categories": ["museum"]
+            },
+            {
+                "title": "Dinner at The Greenhouse",
+                "categories": ["restaurant"]
+            }
+        ]
+    },
+    {
+        "title": "Day 6: Final Explorations and Departure",
+        "activities": [
+            {
+                "title": "Breakfast at Hatch and Sons Irish Kitchen",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Visit to St. Patrick's Cathedral",
+                "categories": ["museum", "art"]
+            },
+            {
+                "title": "Last minute shopping at Grafton Street",
+                "categories": ["bus"]
+            },
+            {
+                "title": "Lunch at Bunsen",
+                "categories": ["restaurant"]
+            },
+            {
+                "title": "Checkout from The Shelbourne Dublin",
+                "categories": ["checkout"]
+            },
+            {
+                "title": "Drive to Dublin Airport",
+                "categories": ["drive"]
+            }
+        ]
+    }
+]
+
