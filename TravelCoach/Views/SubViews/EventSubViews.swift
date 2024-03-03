@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+// This view is the Itinerary event list.
 struct EventView: View {
     let day: Itinerary
     let city: String
@@ -15,8 +16,36 @@ struct EventView: View {
         }
     }
     
+    func displayDailyDate(_ stringDate: String) -> String {
+        // Create a date formatter for the input date format
+        let inputFormatter = DateFormatter()
+        // Specify the input format (adjust this according to your input string format)
+        inputFormatter.dateFormat = "yyyy-MM-dd" // Change this based on the actual format of `stringDate`
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX") // This ensures the formatter doesn't depend on the device's locale
+
+        // Convert the string to a Date object
+        guard let date = inputFormatter.date(from: stringDate) else {
+            return "Invalid date" // Return an error message or handle the error as needed
+        }
+
+        // Create a new formatter for the output date format
+        let outputFormatter = DateFormatter()
+        // Set the desired output format
+        outputFormatter.dateFormat = "EEE, MMM d"
+        outputFormatter.locale = Locale(identifier: "en_US") // Ensure output is in English
+
+        // Convert the Date object to a string in the new format
+        let formattedDate = outputFormatter.string(from: date)
+
+        return formattedDate // Returns the date in "Mon, Mar 12" format
+    }
+    
     var body: some View {
-        Section("\(day.title) - \(day.date)") {
+        Section("\(day.title)") {
+            Text("\(displayDailyDate(day.date))".uppercased())
+                .foregroundColor(.wbPinkMediumAlt)
+                .font(.custom("Satoshi-Bold", size: 16))
+            
             ForEach(day.activities.sorted(by: { $0.index < $1.index }), id: \.self) { activity in
                 Button {
                     self.venueName = IdentifiableString(value: "\(activity.title), \(self.city)")
