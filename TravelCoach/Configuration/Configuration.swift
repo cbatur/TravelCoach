@@ -6,7 +6,7 @@ enum Configuration {
     static let api = "https://palamana.com/baturca/"
     static let apiOpenAI = "https://api.openai.com/v1/"
     static let openAPIKeyOld = "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"
-    static let openAPIKey = "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"
+    static let openAPIKey = "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"
     static let environment = "http://addictivespanish.com/"
     static let isMock: Bool = false
 
