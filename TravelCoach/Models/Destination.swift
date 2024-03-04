@@ -8,6 +8,7 @@ class Destination {
     var id: String = UUID().uuidString
     var name: String
     var details: String
+    var googlePlaceId: String?
     var startDate: Date
     var endDate: Date
     var priority: Int

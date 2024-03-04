@@ -8,6 +8,9 @@ struct EditDestinationView: View {
     @StateObject var chatAPIViewModel: ChatAPIViewModel = ChatAPIViewModel()
     @StateObject var placesViewModel: PlacesViewModel = PlacesViewModel()
     @Bindable var destination: Destination
+    let tabTripItems = ["Overview", "Reservations", "Itinerary", "Settings"]
+    @State private var selection: String = "Overview"
+    
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var launchSearchView = false
@@ -37,14 +40,6 @@ struct EditDestinationView: View {
             return false
         }
     }
-    
-//    var iconImage: Image {
-//        if let iconData = destination.icon, let uiImage = UIImage(data: iconData) {
-//            return Image(uiImage: uiImage)
-//        } else {
-//            return Image("destination_placeholder")
-//        }
-//    }
     
     func enableDateUpdate() -> Bool {
         if destination.startDate == destination.endDate {
@@ -99,25 +94,13 @@ struct EditDestinationView: View {
         VStack {
             
             VStack {
-                HStack {
-                    Image(destination.name.split(separator: ",").map(String.init).last?.replacingOccurrences(of: " ", with: "") ?? "")
-                        .resizable()
-                        .frame(width: 26, height: 18)
-                    
-                    Text(destination.name.split(separator: ",").map(String.init).first ?? "")
-                        .font(.custom("Satoshi-Regular", size: 25))
-                        .foregroundColor(Color.wbPinkShade) +
-                    Text(destination.name.split(separator: ",").map(String.init).last ?? "")
-                        .font(.custom("Satoshi-Bold", size: 25))
-                        .foregroundColor(.white)
-                }
-                .padding(8)
-                .cardStyle(.black.opacity(0.6))
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
+                CityTitleBannerView(cityName: destination.name)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
             }
             .padding(.leading, 10)
+            
         }
-        .frame(height: dateEntryLaunched ? 200 : 80)
+        .frame(height: dateEntryLaunched ? 100 : 50)
         .animation(.easeInOut(duration: 0.3), value: dateEntryLaunched)
         .background(
             Group {
@@ -129,6 +112,33 @@ struct EditDestinationView: View {
                     .animation(.easeInOut(duration: 0.3), value: dateEntryLaunched)
             }
         )
+        
+        // TabView for trip tabs
+        VStack {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 8) {
+                    ForEach(tabTripItems, id: \.self) { option in
+                        Text(option.uppercased())
+                            .font(.custom("Satoshi-Bold", size: 13))
+                            .padding(7)
+                            .background(
+                                self.selection.uppercased() == option.uppercased() ? Color.wbPinkMedium : Color.clear
+                            )
+                            .foregroundColor(
+                                self.selection.uppercased() == option.uppercased() ? Color.white : Color.black
+                            )
+                            .cornerRadius(5)
+                            .onTapGesture {
+                                self.selection = option
+                                //self.loadIcons()
+                            }
+                    }
+                }
+                .padding(.horizontal)
+            }
+        }
+        .padding(7)
+        .cardStyle(.white.opacity(0.9))
         
         Spacer()
         
