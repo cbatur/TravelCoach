@@ -25,7 +25,6 @@ struct DestinationIconView: View {
             self.setImage()
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                //.frame(height: 300)
                 .clipped()
                 .edgesIgnoringSafeArea(.all)
         }

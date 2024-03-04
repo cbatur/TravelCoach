@@ -43,7 +43,7 @@ struct TripsView: View {
     @State private var path = [Destination]()
     @State private var sortOrder = SortDescriptor(\Destination.startDate)
     @State private var launchNewDestination = false
-    @State private var dataFromChild: String?
+    @State private var dataFromChild: (String?, String?)
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -64,9 +64,9 @@ struct TripsView: View {
                     self.dataFromChild = data                    
                 }
             }
-            .onChange(of: self.dataFromChild) { oldData, newData in
-                guard let city = self.dataFromChild else { return }
-                self.addDestination(name: city)
+            .onChange(of: self.dataFromChild.0) { oldData, newData in
+                guard let city = self.dataFromChild.0, let googlePlaceId = self.dataFromChild.1 else { return }
+                self.addDestination(name: city, googlePlaceId: googlePlaceId)
             }
             .navigationBarItems(leading:
                 Button{
@@ -80,8 +80,9 @@ struct TripsView: View {
         }
     }
     
-    func addDestination(name: String) {
+    func addDestination(name: String, googlePlaceId: String) {
         let destination = Destination(name: name)
+        destination.googlePlaceId = googlePlaceId
         destination.startDate = Date.daysFromToday(1)
         destination.endDate = Date.daysFromToday(1)
         modelContext.insert(destination)

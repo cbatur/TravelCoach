@@ -9,7 +9,7 @@ enum Configuration {
 
     enum openAI {
         static let apiOpenAI = "https://api.openai.com/v1/"
-        static let openAPIKey = "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"
+        static let openAPIKey = "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"
         static let openAPIModel = "gpt-3.5-turbo"
     }
     

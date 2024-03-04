@@ -1,139 +1,93 @@
 
 import SwiftUI
-//import SwiftData
 
 struct AddNewDestinationView: View {
-    @StateObject var chatAPIViewModel: ChatAPIViewModel = ChatAPIViewModel()
-    @StateObject private var viewModel = AutocompleteViewModel()
+    @StateObject private var viewModel = GooglePlacesViewModel()
     @StateObject var placesViewModel: PlacesViewModel = PlacesViewModel()
     @State private var showAlert = false
     @Environment(\.presentationMode) var presentationMode
     
-    var onDataReceive: (String) -> Void
-    @State private var localData: String = ""
+    var onDataReceive: ((String,String)) -> Void
 
-    //@Bindable var destination: Destination
     @FocusState private var isInputActive: Bool
     @State private var searchCity = ""
-    @State private var selectedCity = "New, Destination"
-    
-//    func reloadIcon() {
-//        self.placesViewModel.searchLocation(with: destination.name.searchSanitized() + "+photos")
-//    }
-    
-    func handlePlaceImageChanged() {
-        DispatchQueue.main.async { [self] in
-            guard let icon = self.placesViewModel.places.randomElement()?.icon else { return }
-            self.chatAPIViewModel.downloadImage(from: icon)
-        }
-    }
     
     private var alertMessage: String {
         return "Set your destination as \(self.searchCity)? "
-//        if destination.itinerary.count > 0 {
-//            return baseMessage + "\n\nDestination city will change. Your old initerary will be deleted and a new one will be generated."
-//        } else {
-//            return baseMessage
-//        }
     }
-    
-//    func setToNewCity() {
-//        destination.name = self.searchCity
-//        destination.itinerary = []
-//        self.reloadIcon()
-//    }
     
     var body: some View {
         ScrollView {
-            //LoadingView(message: .constant(self.chatAPIViewModel.loadingIconMessage)) {
+            VStack {
                 VStack {
-                    VStack {
+                    CityTitleBannerView(cityName: "Add New, Destination")
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
+                }
+                .padding()
+                .background(
+                    Image("destination_placeholder")
+                )
+                .cardStyle()
+                
+                TextField("Where to?", text: $viewModel.query)
+                    .focused($isInputActive)
+                    .font(.headline)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(24)
+                    .overlay(
                         HStack {
-                            Image(selectedCity.split(separator: ",").map(String.init).last?.replacingOccurrences(of: " ", with: "") ?? "")
+                            Spacer()
+                            if !searchCity.isEmpty || !viewModel.query.isEmpty {
+                                Button(action: clearText) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.gray)
+                                        .font(.largeTitle)
+                                }
+                                .padding(.trailing, 10)
+                            }
+                        }
+                    )
+                    .padding(7)
+                
+                VStack {
+                    ForEach(viewModel.suggestions, id: \.self) { suggestion in
+                        HStack {
+                            Image(suggestion.description.split(separator: ",").map(String.init).last?.replacingOccurrences(of: " ", with: "") ?? "")
                                 .resizable()
                                 .frame(width: 26, height: 18)
                             
-                            Text(selectedCity.split(separator: ",").map(String.init).first ?? "")
-                                .font(.custom("Satoshi-Regular", size: 25))
-                                .foregroundColor(.white) +
-                            Text(selectedCity.split(separator: ",").map(String.init).last ?? "")
-                                .font(.custom("Satoshi-Bold", size: 25))
-                                .foregroundColor(.white)
+                            Text(suggestion.description)
+                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
                         }
-                        .padding(8)
-                        .cardStyle(.black.opacity(0.6))
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
+                        .onTapGesture {
+                            self.searchCity = suggestion.description
+                            onDataReceive((suggestion.description, suggestion.place_id))
+                            showAlert = true
+                            isInputActive = false
+                            viewModel.selectSuggestion(suggestion.description)
+                        }
+                        Divider()
                     }
-                    .padding()
-                    .background(
-                        //DestinationIconView(iconData: destination.icon)
-                    )
-                    .cardStyle()
-                    
-                    TextField("Where to?", text: $viewModel.query)
-                        .focused($isInputActive)
-                        .font(.headline)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(24)
-                        .overlay(
-                            HStack {
-                                Spacer()
-                                if !searchCity.isEmpty || !viewModel.query.isEmpty {
-                                    Button(action: clearText) {
-                                        Image(systemName: "xmark.circle.fill")
-                                            .foregroundColor(.gray)
-                                            .font(.largeTitle)
-                                    }
-                                    .padding(.trailing, 10)
-                                }
-                            }
-                        )
-                        .padding(7)
-                    
-                    VStack {
-                        ForEach(viewModel.suggestions, id: \.self) { suggestion in
-                            HStack {
-                                Image(suggestion.split(separator: ",").map(String.init).last?.replacingOccurrences(of: " ", with: "") ?? "")
-                                    .resizable()
-                                    .frame(width: 26, height: 18)
-                                
-                                Text(suggestion)
-                                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
-                            }
-                            .onTapGesture {
-                                //self.searchCity = suggestion
-                                onDataReceive(suggestion)
-                                showAlert = true
-                                isInputActive = false
-                                viewModel.selectSuggestion(suggestion)
-                            }
-                            Divider()
-                        }
+                }
+                .frame(height: isInputActive == false || viewModel.suggestions.count == 0 || viewModel.query.isEmpty ? 0 : 120)
+                .padding()
+                .isHidden(isInputActive == false)
+            }
+            .alert(isPresented: $showAlert) { // Use the $ prefix to bind showAlert
+                Alert(
+                    title: Text("\(self.searchCity)"),
+                    message: Text(alertMessage),
+                    primaryButton: .destructive(Text("OK")) {
+                        //self.setToNewCity()
+                        presentationMode.wrappedValue.dismiss()
+                    },
+                    secondaryButton: .cancel() {
+                        print("Cancel pressed")
                     }
-                    .frame(height: isInputActive == false || viewModel.suggestions.count == 0 || viewModel.query.isEmpty ? 0 : 120)
-                    .padding()
-                    .isHidden(isInputActive == false)
-                }
-                .alert(isPresented: $showAlert) { // Use the $ prefix to bind showAlert
-                    Alert(
-                        title: Text("\(self.searchCity)"),
-                        message: Text(alertMessage),
-                        primaryButton: .destructive(Text("OK")) {
-                            //self.setToNewCity()
-                            presentationMode.wrappedValue.dismiss()
-                        },
-                        secondaryButton: .cancel() {
-                            // Action for Cancel button
-                            print("Cancel pressed")
-                        }
-                    )
-                }
-                .onChange(of: chatAPIViewModel.imageData) { oldData, newData in
-                    //destination.icon = newData
-                }
-                .navigationBarTitle("", displayMode: .inline)
-            //}
+                )
+            }
+            .navigationBarTitle("", displayMode: .inline)
         }
     }
     
@@ -142,10 +96,4 @@ struct AddNewDestinationView: View {
         viewModel.resetSearch()
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
-    
-//    func parseDateRange() -> String {
-//        let dateRange = "\(destination.startDate.formatted(date: .long, time: .omitted)) and \(destination.endDate.formatted(date: .long, time: .omitted))"
-//        return dateRange
-//    }
-    
 }

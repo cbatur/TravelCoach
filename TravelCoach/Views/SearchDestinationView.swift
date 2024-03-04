@@ -4,7 +4,7 @@ import SwiftData
 
 struct SearchDestinationView: View {
     @StateObject var chatAPIViewModel: ChatAPIViewModel = ChatAPIViewModel()
-    @StateObject private var viewModel = AutocompleteViewModel()
+    @StateObject private var viewModel = GooglePlacesViewModel()
     @StateObject var placesViewModel: PlacesViewModel = PlacesViewModel()
 
     @Bindable var destination: Destination

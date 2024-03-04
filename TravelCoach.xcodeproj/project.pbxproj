@@ -11,6 +11,7 @@
 		7E00557C2B81D281002606E2 /* DestinationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E00557B2B81D281002606E2 /* DestinationIconView.swift */; };
 		7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038262B9582BE00544775 /* AnimationsView.swift */; };
 		7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038282B95909400544775 /* CityTitleBannerView.swift */; };
+		7E10382B2B95A43000544775 /* _GooglePlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
@@ -25,7 +26,6 @@
 		7E8A4F2C2B8BF1760075EB11 /* AllEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8A4F2B2B8BF1760075EB11 /* AllEvents.swift */; };
 		7E8A4F2E2B8BF3730075EB11 /* AllEventsSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8A4F2D2B8BF3730075EB11 /* AllEventsSelectionView.swift */; };
 		7E8CA5E42B6223E3006A2ABE /* TravelCoachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA5E32B6223E3006A2ABE /* TravelCoachApp.swift */; };
-		7E8CA5E62B6223E3006A2ABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA5E52B6223E3006A2ABE /* ContentView.swift */; };
 		7E8CA5E82B6223E4006A2ABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8CA5E72B6223E4006A2ABE /* Assets.xcassets */; };
 		7E8CA5EB2B6223E4006A2ABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E8CA5EA2B6223E4006A2ABE /* Preview Assets.xcassets */; };
 		7E8CA5F52B6223E4006A2ABE /* TravelCoachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA5F42B6223E4006A2ABE /* TravelCoachTests.swift */; };
@@ -62,7 +62,6 @@
 		7E8CA6522B6D7F2B006A2ABE /* Strings+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA6512B6D7F2B006A2ABE /* Strings+Extensions.swift */; };
 		7E8CA6542B6EDAEE006A2ABE /* ReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA6532B6EDAEE006A2ABE /* ReservationsView.swift */; };
 		7E8CA6562B6EE528006A2ABE /* TestPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA6552B6EE528006A2ABE /* TestPopoverView.swift */; };
-		7E918BE12B83DADC00708E0E /* DELETE_UpdateAddDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E918BE02B83DADC00708E0E /* DELETE_UpdateAddDestinationView.swift */; };
 		7E9B9B772B74941A003D8607 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B762B74941A003D8607 /* TripsView.swift */; };
 		7E9B9B792B749851003D8607 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B782B749851003D8607 /* Destination.swift */; };
 		7E9B9B7D2B749EB3003D8607 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */; };
@@ -162,6 +161,7 @@
 		7E00557B2B81D281002606E2 /* DestinationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationIconView.swift; sourceTree = "<group>"; };
 		7E1038262B9582BE00544775 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationsView.swift; path = ../../../../Library/CloudStorage/Dropbox/iOS/TravelCoach/TravelCoach/Views/SubViews/AnimationsView.swift; sourceTree = "<group>"; };
 		7E1038282B95909400544775 /* CityTitleBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTitleBannerView.swift; sourceTree = "<group>"; };
+		7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _GooglePlacesViewModel.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
@@ -177,7 +177,6 @@
 		7E8A4F2D2B8BF3730075EB11 /* AllEventsSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsSelectionView.swift; sourceTree = "<group>"; };
 		7E8CA5E02B6223E3006A2ABE /* TravelCoach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelCoach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E8CA5E32B6223E3006A2ABE /* TravelCoachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCoachApp.swift; sourceTree = "<group>"; };
-		7E8CA5E52B6223E3006A2ABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7E8CA5E72B6223E4006A2ABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E8CA5EA2B6223E4006A2ABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7E8CA5F02B6223E4006A2ABE /* TravelCoachTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelCoachTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,7 +213,6 @@
 		7E8CA6512B6D7F2B006A2ABE /* Strings+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Extensions.swift"; sourceTree = "<group>"; };
 		7E8CA6532B6EDAEE006A2ABE /* ReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationsView.swift; sourceTree = "<group>"; };
 		7E8CA6552B6EE528006A2ABE /* TestPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPopoverView.swift; sourceTree = "<group>"; };
-		7E918BE02B83DADC00708E0E /* DELETE_UpdateAddDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELETE_UpdateAddDestinationView.swift; sourceTree = "<group>"; };
 		7E9B9B762B74941A003D8607 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		7E9B9B782B749851003D8607 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
@@ -328,6 +326,17 @@
 			path = Animatons;
 			sourceTree = "<group>";
 		};
+		7E10382C2B95A5CD00544775 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7E8CA6382B68A50A006A2ABE /* _ChatAPIViewModel.swift */,
+				7E8CA64D2B6D6A94006A2ABE /* _PlacesViewModel.swift */,
+				7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */,
+				7E8CA6292B6760F2006A2ABE /* _MockServicesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		7E3F96B62B871EC900170E87 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */,
-				7E918BE02B83DADC00708E0E /* DELETE_UpdateAddDestinationView.swift */,
 			);
 			path = UpdateViews;
 			sourceTree = "<group>";
@@ -462,18 +470,15 @@
 		7E8CA6142B6230CE006A2ABE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E10382C2B95A5CD00544775 /* ViewModels */,
 				7E1038252B95824800544775 /* Animatons */,
 				7E8218E72B944BA30090AA15 /* SubViews */,
 				7E8218E42B9301B00090AA15 /* Launch */,
 				7E8218DB2B92F4CB0090AA15 /* Account */,
-				7E8CA6382B68A50A006A2ABE /* _ChatAPIViewModel.swift */,
-				7E8CA64D2B6D6A94006A2ABE /* _PlacesViewModel.swift */,
-				7E8CA6292B6760F2006A2ABE /* _MockServicesViewModel.swift */,
 				7E5A75982B831BB300B870A7 /* UpdateViews */,
 				7E8CA63F2B68B691006A2ABE /* Shared */,
 				7E9B9B762B74941A003D8607 /* TripsView.swift */,
 				7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */,
-				7E8CA5E52B6223E3006A2ABE /* ContentView.swift */,
 				7E8CA6202B64A526006A2ABE /* CalendarView.swift */,
 				7E8CA6242B6758A3006A2ABE /* DailyPlanView.swift */,
 				7E8CA6442B6A38E5006A2ABE /* VenueDetailsView.swift */,
@@ -900,7 +905,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E8CA62E2B68A129006A2ABE /* APIServices.swift in Sources */,
-				7E8CA5E62B6223E3006A2ABE /* ContentView.swift in Sources */,
 				7E8CA61F2B643D73006A2ABE /* CalendarModals.swift in Sources */,
 				7E8CA6392B68A50A006A2ABE /* _ChatAPIViewModel.swift in Sources */,
 				7E8CA6162B623100006A2ABE /* CalendarMonthView.swift in Sources */,
@@ -932,7 +936,6 @@
 				7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */,
 				7E8CA6432B6A2A7C006A2ABE /* Icons.swift in Sources */,
 				7E8CA6502B6D6B71006A2ABE /* Array+Extensions.swift in Sources */,
-				7E918BE12B83DADC00708E0E /* DELETE_UpdateAddDestinationView.swift in Sources */,
 				7E8218E12B92F61A0090AA15 /* SideMenuView.swift in Sources */,
 				7E00557A2B812F80002606E2 /* SearchDestinationView.swift in Sources */,
 				7E8CA6212B64A526006A2ABE /* CalendarView.swift in Sources */,
@@ -947,6 +950,7 @@
 				7E8A4F2C2B8BF1760075EB11 /* AllEvents.swift in Sources */,
 				7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */,
 				7E8CA6312B68A143006A2ABE /* ChatGPTResponse.swift in Sources */,
+				7E10382B2B95A43000544775 /* _GooglePlacesViewModel.swift in Sources */,
 				7E8CA6132B622E43006A2ABE /* UIView+Utilities.swift in Sources */,
 				7E8CA6542B6EDAEE006A2ABE /* ReservationsView.swift in Sources */,
 				7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */,
