@@ -75,7 +75,7 @@ enum Requests {
         
         let jsonString = """
         {
-            "model": "gpt-3.5-turbo",
+            "model": "\(Configuration.openAPIModel)",
             "messages": [
                 {
                     "role": "user",
