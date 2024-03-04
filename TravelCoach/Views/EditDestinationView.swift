@@ -38,13 +38,13 @@ struct EditDestinationView: View {
         }
     }
     
-    var iconImage: Image {
-        if let iconData = destination.icon, let uiImage = UIImage(data: iconData) {
-            return Image(uiImage: uiImage)
-        } else {
-            return Image("destination_placeholder")
-        }
-    }
+//    var iconImage: Image {
+//        if let iconData = destination.icon, let uiImage = UIImage(data: iconData) {
+//            return Image(uiImage: uiImage)
+//        } else {
+//            return Image("destination_placeholder")
+//        }
+//    }
     
     func enableDateUpdate() -> Bool {
         if destination.startDate == destination.endDate {
@@ -247,6 +247,15 @@ struct EditDestinationView: View {
             
             self.setDateState()
         }
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.launchUpdateicon = true
+            }) {
+                Image(systemName: "photo.circle.fill")
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
+            }
+        )
         .onChange(of: destination.itinerary) { oldData, newData in
             self.placesViewModel.reloadIcon(destination: destination)
             self.setDateState()
@@ -269,86 +278,6 @@ struct EditDestinationView: View {
         .sheet(isPresented: $launchAllEvents) {
             AllEventsSelectionView(destination: destination)
         }        
-    }
-}
-
-struct AlertViewPopoverMe: View {
-    @Binding var present: Bool
-    @Binding var expanding: Bool
-
-    /// the initial animation
-    @State var scaled = true
-
-    var body: some View {
-        VStack(spacing: 0) {
-            VStack(spacing: 6) {
-                Text("Alert!")
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
-
-                Text("Popovers has used your location 2000 times in the past 7 days.")
-                    .multilineTextAlignment(.center)
-            }
-            .padding()
-
-            Divider()
-
-            Button {
-                present = false
-            } label: {
-                Text("Ok")
-                    .foregroundColor(.blue)
-            }
-            //.buttonStyle(Templates.AlertButtonStyle())
-        }
-        .background(Color(.systemBackground))
-        .cornerRadius(16)
-        .popoverShadow(shadow: .system)
-        .frame(width: 260)
-        .scaleEffect(expanding ? 1.05 : 1)
-        .scaleEffect(scaled ? 2 : 1)
-        .opacity(scaled ? 0 : 1)
-        .onAppear {
-            withAnimation(.spring(
-                response: 0.4,
-                dampingFraction: 0.9,
-                blendDuration: 1
-            )) {
-                scaled = false
-            }
-        }
-    }
-}
-
-struct ImageAnimate: View {
-    @State private var itemPositions: [CGPoint] = [CGPoint(x: 100, y: 600), CGPoint(x: 200, y: 600), CGPoint(x: 300, y: 600)]
-    @State private var luggageOffset: CGFloat = 0
-
-    var body: some View {
-        ZStack {
-            Image("icon_luggage_alt")
-                .resizable()
-                .frame(width: 120, height: 120)
-                .offset(y: luggageOffset)
-
-            // Items to throw in the luggage
-            ForEach(0..<itemPositions.count, id: \.self) { index in
-                Image(systemName: "iphone") // Replace this with your item view
-                    .frame(width: 50, height: 50)
-                    .position(itemPositions[index])
-                    .onTapGesture {
-                        withAnimation(.easeInOut(duration: 1)) {
-                            itemPositions[index] = CGPoint(x: 150, y: 400) // Adjust final position based on luggage location
-                        }
-                    }
-            }
-        }
-        .onAppear {
-            // Animate luggage appearance
-            withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
-                luggageOffset = 20 // Slight move to indicate where to throw items
-            }
-        }
     }
 }
 

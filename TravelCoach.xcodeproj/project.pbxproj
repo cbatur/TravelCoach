@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E00557A2B812F80002606E2 /* SearchDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0055792B812F80002606E2 /* SearchDestinationView.swift */; };
 		7E00557C2B81D281002606E2 /* DestinationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E00557B2B81D281002606E2 /* DestinationIconView.swift */; };
+		7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038262B9582BE00544775 /* AnimationsView.swift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
@@ -158,6 +159,7 @@
 /* Begin PBXFileReference section */
 		7E0055792B812F80002606E2 /* SearchDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDestinationView.swift; sourceTree = "<group>"; };
 		7E00557B2B81D281002606E2 /* DestinationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationIconView.swift; sourceTree = "<group>"; };
+		7E1038262B9582BE00544775 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationsView.swift; path = ../../../../Library/CloudStorage/Dropbox/iOS/TravelCoach/TravelCoach/Views/SubViews/AnimationsView.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
@@ -316,6 +318,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E1038252B95824800544775 /* Animatons */ = {
+			isa = PBXGroup;
+			children = (
+				7E1038262B9582BE00544775 /* AnimationsView.swift */,
+			);
+			path = Animatons;
+			sourceTree = "<group>";
+		};
 		7E3F96B62B871EC900170E87 /* Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +459,7 @@
 		7E8CA6142B6230CE006A2ABE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E1038252B95824800544775 /* Animatons */,
 				7E8218E72B944BA30090AA15 /* SubViews */,
 				7E8218E42B9301B00090AA15 /* Launch */,
 				7E8218DB2B92F4CB0090AA15 /* Account */,
@@ -934,6 +945,7 @@
 				7E8CA6312B68A143006A2ABE /* ChatGPTResponse.swift in Sources */,
 				7E8CA6132B622E43006A2ABE /* UIView+Utilities.swift in Sources */,
 				7E8CA6542B6EDAEE006A2ABE /* ReservationsView.swift in Sources */,
+				7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */,
 				7E00557C2B81D281002606E2 /* DestinationIconView.swift in Sources */,
 				7E8CA6562B6EE528006A2ABE /* TestPopoverView.swift in Sources */,
 				7E8CA61C2B637AA5006A2ABE /* Calendar+Utilities.swift in Sources */,

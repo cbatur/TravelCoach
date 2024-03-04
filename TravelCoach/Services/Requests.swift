@@ -70,12 +70,12 @@ enum Requests {
     
     var requestOpenAI: URLRequest {
         
-        let path = "\(Configuration.apiOpenAI)\(self.path)"
+        let path = "\(Configuration.openAI.apiOpenAI)\(self.path)"
         guard let url = URL(string: path) else { preconditionFailure("Bad URL") }
         
         let jsonString = """
         {
-            "model": "\(Configuration.openAPIModel)",
+            "model": "\(Configuration.openAI.openAPIModel)",
             "messages": [
                 {
                     "role": "user",
@@ -90,7 +90,7 @@ enum Requests {
         request.httpBody = jsonString.data(using: .utf8)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(Configuration.openAPIKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(Configuration.openAI.openAPIKey)", forHTTPHeaderField: "Authorization")
         
         print(request.prettyDescription)
         return request
@@ -98,7 +98,7 @@ enum Requests {
     
     var requestOpenAIImageCreator: URLRequest {
         
-        let path = "\(Configuration.apiOpenAI)\(self.path)"
+        let path = "\(Configuration.openAI.apiOpenAI)\(self.path)"
         guard let url = URL(string: path) else { preconditionFailure("Bad URL") }
         
         let title = "\(self.body["keyword"] ?? "")"
@@ -116,7 +116,7 @@ enum Requests {
         request.httpBody = jsonString.data(using: .utf8)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(Configuration.openAPIKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(Configuration.openAI.openAPIKey)", forHTTPHeaderField: "Authorization")
         
         print(request.prettyDescription)
         return request
