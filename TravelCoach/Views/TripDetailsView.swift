@@ -4,7 +4,8 @@ import SwiftData
 import LonginusSwiftUI
 import Popovers
 
-struct EditDestinationView: View {
+struct TripDetailsView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var chatAPIViewModel: ChatAPIViewModel = ChatAPIViewModel()
     @StateObject var placesViewModel: PlacesViewModel = PlacesViewModel()
     @Bindable var destination: Destination
@@ -150,9 +151,8 @@ struct EditDestinationView: View {
                     .font(.custom("Bevellier-Regular", size: 20))
                     .foregroundColor(Color.wbPinkMedium)
                     .padding()
-                    .opacity(isAnimating ? 0 : 1) // Bind opacity to the isAnimating state variable
+                    .opacity(isAnimating ? 0 : 1)
                     .onAppear {
-                        // Start the animation when the text appears
                         withAnimation(Animation.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
                             isAnimating = true
                         }
@@ -257,6 +257,12 @@ struct EditDestinationView: View {
             
             self.setDateState()
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+            NavigationBarSubViews(onAction: {
+                self.presentationMode.wrappedValue.dismiss()
+            })
+        )
         .navigationBarItems(trailing:
             Button(action: {
                 self.launchUpdateicon = true
@@ -296,7 +302,7 @@ struct EditDestinationView: View {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: Destination.self, configurations: config)
         let example = Destination(name: "Example Destination", details: "Example details go here and will automatically expand vertically as they are edited.")
-        return EditDestinationView(destination: example)
+        return TripDetailsView(destination: example)
             .modelContainer(container)
     } catch {
         fatalError("Failed to create model container")

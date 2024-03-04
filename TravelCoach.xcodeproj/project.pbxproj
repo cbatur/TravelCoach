@@ -12,6 +12,7 @@
 		7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038262B9582BE00544775 /* AnimationsView.swift */; };
 		7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038282B95909400544775 /* CityTitleBannerView.swift */; };
 		7E10382B2B95A43000544775 /* _GooglePlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */; };
+		7E10382E2B95B44B00544775 /* NavigationBarSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
@@ -64,7 +65,7 @@
 		7E8CA6562B6EE528006A2ABE /* TestPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8CA6552B6EE528006A2ABE /* TestPopoverView.swift */; };
 		7E9B9B772B74941A003D8607 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B762B74941A003D8607 /* TripsView.swift */; };
 		7E9B9B792B749851003D8607 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B782B749851003D8607 /* Destination.swift */; };
-		7E9B9B7D2B749EB3003D8607 /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */; };
+		7E9B9B7D2B749EB3003D8607 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7C2B749EB3003D8607 /* TripDetailsView.swift */; };
 		7E9B9B7F2B74A666003D8607 /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */; };
 		7E9B9BA12B7B0618003D8607 /* Stardom-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9B832B7B0617003D8607 /* Stardom-Regular.otf */; };
 		7E9B9BA22B7B0618003D8607 /* Tanker-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9B842B7B0617003D8607 /* Tanker-Regular.otf */; };
@@ -162,6 +163,7 @@
 		7E1038262B9582BE00544775 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnimationsView.swift; path = ../../../../Library/CloudStorage/Dropbox/iOS/TravelCoach/TravelCoach/Views/SubViews/AnimationsView.swift; sourceTree = "<group>"; };
 		7E1038282B95909400544775 /* CityTitleBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTitleBannerView.swift; sourceTree = "<group>"; };
 		7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _GooglePlacesViewModel.swift; sourceTree = "<group>"; };
+		7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSubViews.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 		7E8CA6552B6EE528006A2ABE /* TestPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPopoverView.swift; sourceTree = "<group>"; };
 		7E9B9B762B74941A003D8607 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		7E9B9B782B749851003D8607 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
-		7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
+		7E9B9B7C2B749EB3003D8607 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
 		7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingView.swift; sourceTree = "<group>"; };
 		7E9B9B832B7B0617003D8607 /* Stardom-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stardom-Regular.otf"; sourceTree = "<group>"; };
 		7E9B9B842B7B0617003D8607 /* Tanker-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tanker-Regular.otf"; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			children = (
 				7E8218E82B944BCD0090AA15 /* EventSubViews.swift */,
 				7E1038282B95909400544775 /* CityTitleBannerView.swift */,
+				7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -484,11 +487,11 @@
 				7E8CA6442B6A38E5006A2ABE /* VenueDetailsView.swift */,
 				7E8CA6532B6EDAEE006A2ABE /* ReservationsView.swift */,
 				7E8CA6552B6EE528006A2ABE /* TestPopoverView.swift */,
-				7E9B9B7C2B749EB3003D8607 /* EditDestinationView.swift */,
 				7E0055792B812F80002606E2 /* SearchDestinationView.swift */,
 				7E8A4F2D2B8BF3730075EB11 /* AllEventsSelectionView.swift */,
 				7EDD78852B918CAB00469E77 /* AddNewDestinationView.swift */,
 				7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */,
+				7E9B9B7C2B749EB3003D8607 /* TripDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */,
 				7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */,
 				7E8CA6432B6A2A7C006A2ABE /* Icons.swift in Sources */,
+				7E10382E2B95B44B00544775 /* NavigationBarSubViews.swift in Sources */,
 				7E8CA6502B6D6B71006A2ABE /* Array+Extensions.swift in Sources */,
 				7E8218E12B92F61A0090AA15 /* SideMenuView.swift in Sources */,
 				7E00557A2B812F80002606E2 /* SearchDestinationView.swift in Sources */,
@@ -943,7 +947,7 @@
 				7E8CA6182B62325B006A2ABE /* Date+Extensions.swift in Sources */,
 				7E8CA62A2B6760F2006A2ABE /* _MockServicesViewModel.swift in Sources */,
 				7EDD78862B918CAB00469E77 /* AddNewDestinationView.swift in Sources */,
-				7E9B9B7D2B749EB3003D8607 /* EditDestinationView.swift in Sources */,
+				7E9B9B7D2B749EB3003D8607 /* TripDetailsView.swift in Sources */,
 				7E8218DF2B92F4F80090AA15 /* AccountView.swift in Sources */,
 				7E8218D82B92EE030090AA15 /* NavigationToolbar.swift in Sources */,
 				7E8218E32B92F65F0090AA15 /* SideMenu.swift in Sources */,

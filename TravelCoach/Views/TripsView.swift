@@ -57,8 +57,7 @@ struct TripsView: View {
                     }
             }
             .navigationTitle("My Trips".uppercased())
-            //.modifier(NavigationToolbar())
-            .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
+            .navigationDestination(for: Destination.self, destination: TripDetailsView.init)
             .sheet(isPresented: $launchNewDestination) {
                 AddNewDestinationView { data in
                     self.dataFromChild = data                    
