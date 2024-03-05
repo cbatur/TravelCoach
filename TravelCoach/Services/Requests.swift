@@ -1,5 +1,6 @@
 
 import Foundation
+import CryptoSwift
 
 enum Requests {
     case chatAPIGetQuestion(qType: QCategory)
@@ -68,10 +69,41 @@ enum Requests {
         return request
     }
     
+    func decryptAPIKey() -> String? {
+        let keyHex = Configuration.openAI.keyHex
+        let ivHex = Configuration.openAI.ivHex
+        let encryptedBase64 = Configuration.openAI.encryptedBase64
+        
+        do {
+            let key = Array<UInt8>(hex: keyHex)
+            let iv = Array<UInt8>(hex: ivHex)
+
+            guard let encryptedBytes = Data(base64Encoded: encryptedBase64)?.bytes else {
+                print("[Debug] Decryption failed: Invalid base64 string")
+                return nil
+            }
+
+            let aes = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7)
+            let decryptedBytes = try aes.decrypt(encryptedBytes)
+
+            if let decryptedString = String(bytes: decryptedBytes, encoding: .utf8) {
+                return decryptedString
+            } else {
+                print("[Debug] Decryption failed: Could not convert bytes to string")
+                return nil
+            }
+        } catch {
+            print("[Debug] An error occurred: \(error)")
+            return nil
+        }
+    }
+    
     var requestOpenAI: URLRequest {
         
         let path = "\(Configuration.openAI.apiOpenAI)\(self.path)"
         guard let url = URL(string: path) else { preconditionFailure("Bad URL") }
+        
+        guard let openAPIKey = decryptAPIKey() else { preconditionFailure("Bad API Key") }
         
         let jsonString = """
         {
@@ -90,7 +122,7 @@ enum Requests {
         request.httpBody = jsonString.data(using: .utf8)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(Configuration.openAI.openAPIKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(openAPIKey)", forHTTPHeaderField: "Authorization")
         
         print(request.prettyDescription)
         return request
@@ -111,12 +143,14 @@ enum Requests {
           }
         """
 
+        guard let openAPIKey = decryptAPIKey() else { preconditionFailure("Bad API Key") }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = jsonString.data(using: .utf8)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(Configuration.openAI.openAPIKey)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(openAPIKey)", forHTTPHeaderField: "Authorization")
         
         print(request.prettyDescription)
         return request

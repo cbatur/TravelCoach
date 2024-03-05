@@ -40,8 +40,4 @@ enum Icon: String, CaseIterable {
             return "wineglass"
         }
     }
-//    
-//    func getIcon(categories: [String]) -> String {
-//        return "dot.square"
-//    }
 }

@@ -13,6 +13,8 @@
 		7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038282B95909400544775 /* CityTitleBannerView.swift */; };
 		7E10382B2B95A43000544775 /* _GooglePlacesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */; };
 		7E10382E2B95B44B00544775 /* NavigationBarSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */; };
+		7E1038312B96B46F00544775 /* CryptoSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038302B96B46F00544775 /* CryptoSwift.swift */; };
+		7E1038342B96BD5200544775 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7E1038332B96BD5200544775 /* CryptoSwift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
@@ -164,6 +166,7 @@
 		7E1038282B95909400544775 /* CityTitleBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTitleBannerView.swift; sourceTree = "<group>"; };
 		7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _GooglePlacesViewModel.swift; sourceTree = "<group>"; };
 		7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSubViews.swift; sourceTree = "<group>"; };
+		7E1038302B96B46F00544775 /* CryptoSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSwift.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 			files = (
 				7E8CA60F2B622621006A2ABE /* Popovers in Frameworks */,
 				7E8CA63E2B68B161006A2ABE /* LonginusSwiftUI in Frameworks */,
+				7E1038342B96BD5200544775 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +341,14 @@
 				7E8CA6292B6760F2006A2ABE /* _MockServicesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7E10382F2B96B40800544775 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				7E1038302B96B46F00544775 /* CryptoSwift.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		7E3F96B62B871EC900170E87 /* Style */ = {
@@ -421,8 +433,9 @@
 				7E8CA61D2B643D5A006A2ABE /* Models */,
 				7E8CA62B2B68A05D006A2ABE /* Services */,
 				7E8CA6262B675FE7006A2ABE /* Resources */,
-				7E8CA6142B6230CE006A2ABE /* Views */,
+				7E10382F2B96B40800544775 /* Security */,
 				7E8CA6112B622E03006A2ABE /* Extensions */,
+				7E8CA6142B6230CE006A2ABE /* Views */,
 				7E8CA5E32B6223E3006A2ABE /* TravelCoachApp.swift */,
 				7E8CA5E72B6223E4006A2ABE /* Assets.xcassets */,
 				7E8CA5E92B6223E4006A2ABE /* Preview Content */,
@@ -718,6 +731,7 @@
 			packageProductDependencies = (
 				7E8CA60E2B622621006A2ABE /* Popovers */,
 				7E8CA63D2B68B161006A2ABE /* LonginusSwiftUI */,
+				7E1038332B96BD5200544775 /* CryptoSwift */,
 			);
 			productName = TravelCoach;
 			productReference = 7E8CA5E02B6223E3006A2ABE /* TravelCoach.app */;
@@ -794,6 +808,7 @@
 			packageReferences = (
 				7E8CA60D2B622620006A2ABE /* XCRemoteSwiftPackageReference "Popovers" */,
 				7E8CA6102B622635006A2ABE /* XCRemoteSwiftPackageReference "Longinus" */,
+				7E1038322B96BD5200544775 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
 			);
 			productRefGroup = 7E8CA5E12B6223E3006A2ABE /* Products */;
 			projectDirPath = "";
@@ -945,6 +960,7 @@
 				7E8CA6212B64A526006A2ABE /* CalendarView.swift in Sources */,
 				7E8CA64A2B6B5260006A2ABE /* ViewHelpers.swift in Sources */,
 				7E8CA6182B62325B006A2ABE /* Date+Extensions.swift in Sources */,
+				7E1038312B96B46F00544775 /* CryptoSwift.swift in Sources */,
 				7E8CA62A2B6760F2006A2ABE /* _MockServicesViewModel.swift in Sources */,
 				7EDD78862B918CAB00469E77 /* AddNewDestinationView.swift in Sources */,
 				7E9B9B7D2B749EB3003D8607 /* TripDetailsView.swift in Sources */,
@@ -1122,7 +1138,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 2.5;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;
@@ -1152,7 +1168,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.4;
+				CURRENT_PROJECT_VERSION = 2.5;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;
@@ -1294,6 +1310,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7E1038322B96BD5200544775 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.1;
+			};
+		};
 		7E8CA60D2B622620006A2ABE /* XCRemoteSwiftPackageReference "Popovers" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/aheze/Popovers";
@@ -1313,6 +1337,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7E1038332B96BD5200544775 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7E1038322B96BD5200544775 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
 		7E8CA60E2B622621006A2ABE /* Popovers */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7E8CA60D2B622620006A2ABE /* XCRemoteSwiftPackageReference "Popovers" */;
