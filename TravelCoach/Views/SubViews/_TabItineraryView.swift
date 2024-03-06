@@ -1,9 +1,3 @@
-//
-//  _TabItineraryView.swift
-//  TravelCoach
-//
-//  Created by Cantek Batur on 2024-03-05.
-//
 
 import SwiftUI
 
