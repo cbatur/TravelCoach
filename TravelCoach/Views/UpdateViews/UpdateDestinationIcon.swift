@@ -5,7 +5,6 @@ import SwiftData
 struct UpdateDestinationIcon: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var chatAPIViewModel: ChatAPIViewModel = ChatAPIViewModel()
-    @StateObject var placesViewModel: PlacesViewModel = PlacesViewModel()
     @StateObject var googlePlacesViewModel: GooglePlacesViewModel = GooglePlacesViewModel()
     let columns: [GridItem] = [GridItem(.flexible()),
                                GridItem(.flexible())]
@@ -21,7 +20,6 @@ struct UpdateDestinationIcon: View {
     }
     
     var body: some View {
-        
         VStack {
             HStack {
                 CityTitleBannerView(cityName: destination.name)

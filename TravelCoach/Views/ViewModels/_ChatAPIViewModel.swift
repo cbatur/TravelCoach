@@ -136,7 +136,7 @@ final class ChatAPIViewModel: ObservableObject {
             guard let cityIcon = $0.data.first?.url else { return }
             self.backgroundLocationImageUrl = cityIcon
             
-            if let url = URL(string: cityIcon) {
+            if let _ = URL(string: cityIcon) {
                 self.downloadImage(from: cityIcon)
             }
         })

@@ -109,8 +109,7 @@ struct TripDetailsView: View {
                     chatAPIViewModel: chatAPIViewModel,
                     icon: destination.icon ?? Data()
                 )
-                //DestinationIconView(iconData: destination.icon)
-                    .animation(.easeInOut(duration: 0.3), value: dateEntryLaunched)
+                .animation(.easeInOut(duration: 0.3), value: dateEntryLaunched)
             }
         )
         
@@ -160,7 +159,7 @@ struct TripDetailsView: View {
             }
                 
         } else {
-        
+            
             Form {
                 ForEach(destination.itinerary.sorted(by: { $0.index < $1.index }), id: \.self) { day in
                     EventView(day: day, city: destination.name)
