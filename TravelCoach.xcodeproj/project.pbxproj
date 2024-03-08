@@ -18,6 +18,8 @@
 		7E1038362B982E8400544775 /* _TabOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038352B982E8400544775 /* _TabOverviewView.swift */; };
 		7E1038382B982F0500544775 /* _TabReservationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038372B982F0500544775 /* _TabReservationsView.swift */; };
 		7E10383A2B982F4D00544775 /* _TabItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038392B982F4D00544775 /* _TabItineraryView.swift */; };
+		7E10383C2B98302000544775 /* _TabTripSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10383B2B98302000544775 /* _TabTripSettings.swift */; };
+		7E10383E2B9830CD00544775 /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10383D2B9830CD00544775 /* TabViews.swift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
@@ -172,6 +174,8 @@
 		7E1038352B982E8400544775 /* _TabOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabOverviewView.swift; sourceTree = "<group>"; };
 		7E1038372B982F0500544775 /* _TabReservationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabReservationsView.swift; sourceTree = "<group>"; };
 		7E1038392B982F4D00544775 /* _TabItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabItineraryView.swift; sourceTree = "<group>"; };
+		7E10383B2B98302000544775 /* _TabTripSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabTripSettings.swift; sourceTree = "<group>"; };
+		7E10383D2B9830CD00544775 /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
@@ -396,6 +400,7 @@
 				7E1038352B982E8400544775 /* _TabOverviewView.swift */,
 				7E1038372B982F0500544775 /* _TabReservationsView.swift */,
 				7E1038392B982F4D00544775 /* _TabItineraryView.swift */,
+				7E10383B2B98302000544775 /* _TabTripSettings.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 				7E8CA6422B6A2A7C006A2ABE /* Icons.swift */,
 				7E8CA6462B6AD67A006A2ABE /* ActivityIndicatorMessage.swift */,
 				7EDD78892B9286E400469E77 /* TripGroup.swift */,
+				7E10383D2B9830CD00544775 /* TabViews.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -933,6 +939,7 @@
 				7E8CA6392B68A50A006A2ABE /* _ChatAPIViewModel.swift in Sources */,
 				7E8CA6162B623100006A2ABE /* CalendarMonthView.swift in Sources */,
 				7E8CA63B2B68A834006A2ABE /* GPTResponseModels.swift in Sources */,
+				7E10383E2B9830CD00544775 /* TabViews.swift in Sources */,
 				7E8CA6252B6758A3006A2ABE /* DailyPlanView.swift in Sources */,
 				7E8CA64C2B6D659C006A2ABE /* Location.swift in Sources */,
 				7E8CA6472B6AD67A006A2ABE /* ActivityIndicatorMessage.swift in Sources */,
@@ -959,6 +966,7 @@
 				7E8CA6412B68B69C006A2ABE /* LoadingView.swift in Sources */,
 				7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */,
 				7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */,
+				7E10383C2B98302000544775 /* _TabTripSettings.swift in Sources */,
 				7E8CA6432B6A2A7C006A2ABE /* Icons.swift in Sources */,
 				7E10382E2B95B44B00544775 /* NavigationBarSubViews.swift in Sources */,
 				7E8CA6502B6D6B71006A2ABE /* Array+Extensions.swift in Sources */,

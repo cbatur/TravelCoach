@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct _TabReservationsView: View {
+struct _TabTripSettings: View {
     @Bindable var destination: Destination
 
     init(destination: Destination) {
@@ -9,9 +9,6 @@ struct _TabReservationsView: View {
     }
     
     var body: some View {
-        VStack {
-            ReservationsView()
-        }
+        Text("Trip Settings")
     }
 }
-

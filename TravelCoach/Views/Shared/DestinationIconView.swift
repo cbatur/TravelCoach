@@ -31,6 +31,26 @@ struct DestinationIconView: View {
     }
 }
 
+struct DestinationBackgroundIconView: View {
+    let iconData: Data?
+    
+    func setImage() -> Image {
+        if let iconData = iconData, let uiImage = UIImage(data: iconData) {
+            return Image(uiImage: uiImage)
+        } else {
+            return Image("destination_placeholder")
+        }
+    }
+    
+    var body: some View {
+        self.setImage()
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .clipped()
+            .ignoresSafeArea(.all)
+    }
+}
+
 #Preview {
     DestinationIconView(iconData: Data())
 }

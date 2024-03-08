@@ -27,25 +27,32 @@ struct ReservationsView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(travelData) { section in
-                    Section(header: Text(section.title)) {
-                        ForEach(section.items) { item in
-                            HStack {
-                                Image(systemName: item.iconName)
-                                VStack(alignment: .leading) {
-                                    Text(item.title)
-                                        .fontWeight(.semibold)
-                                    Text(item.subtitle)
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
+            VStack {
+                Text("Flights, Hotels and Car Rentals")
+                    .font(.custom("Bevellier-Regular", size: 22))
+                    .foregroundColor(Color.wbPinkMediumAlt)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                
+                List {
+                    ForEach(travelData) { section in
+                        Section(header: Text(section.title)) {
+                            ForEach(section.items) { item in
+                                HStack {
+                                    Image(systemName: item.iconName)
+                                    VStack(alignment: .leading) {
+                                        Text(item.title)
+                                            .fontWeight(.semibold)
+                                        Text(item.subtitle)
+                                            .font(.subheadline)
+                                            .foregroundColor(.gray)
+                                    }
                                 }
                             }
                         }
                     }
                 }
             }
-            .navigationTitle("My Trip")
         }
     }
 }
