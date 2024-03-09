@@ -28,7 +28,7 @@ struct UpdateDestinationIcon: View {
         }
         .padding()
         .background(
-            DestinationIconView(iconData: destination.icon)
+            DestinationIconDataView(iconData: destination.icon)
         )
         .cardStyle()
         

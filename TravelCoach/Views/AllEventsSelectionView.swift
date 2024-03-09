@@ -3,6 +3,7 @@ import SwiftUI
 import Combine
 
 struct AllEventsSelectionView: View {
+    @Environment(\.presentationMode) var presentationMode
     @Bindable var destination: Destination
     @StateObject var mockServices: MockServices = MockServices()
     @StateObject var eventSelectionViewModel: EventSelectionViewModel = EventSelectionViewModel()
@@ -18,14 +19,43 @@ struct AllEventsSelectionView: View {
     }
     
     var body: some View {
-        Form {
-            if chatAPIViewModel.loadingMessage != nil {
-                Text(chatAPIViewModel.loadingMessage ?? "")
-                    .foregroundColor(.red)
-                    .font(.headline).bold()
-            } else {
-                ForEach(self.chatAPIViewModel.allEvents, id: \.self) { item in
-                    AllEventItem(viewModel: eventSelectionViewModel, item: item)
+        VStack {
+            VStack {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    
+                    VStack {
+                        CityTitleBannerView(cityName: destination.name)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    HStack {
+                        Image(systemName: "xmark.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(.gray)
+                    }
+                    .padding()
+                }
+                
+                Text("Events and Activities")
+                    .foregroundColor(.wbPinkMedium)
+                    .font(.custom("Satoshi-Bold", size: 25))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            .padding()
+            
+            Form {
+                if chatAPIViewModel.loadingMessage != nil {
+                    Text(chatAPIViewModel.loadingMessage ?? "")
+                        .foregroundColor(.red)
+                        .font(.headline).bold()
+                } else {
+                    ForEach(self.chatAPIViewModel.allEvents, id: \.self) { item in
+                        AllEventItem(viewModel: eventSelectionViewModel, item: item)
+                    }
                 }
             }
         }
@@ -50,6 +80,8 @@ struct AllEventItem: View {
                 viewModel.toggleCategorySelection(item)
             }) {
                 Image(systemName: viewModel.isCategorySelected(item) ? "checkmark.square" : "square")
+                    .font(.largeTitle)
+                    .foregroundColor(viewModel.isCategorySelected(item) ? Color.wbPinkMedium : .gray)
             }
         }) {
             ForEach(item.events, id: \.self) { event in
@@ -57,13 +89,18 @@ struct AllEventItem: View {
                     viewModel.toggleEventSelection(event)
                 }) {
                     HStack {
+                        
+                        DestinationIconView(image: Image("dublin"), size: 60)
+                        
                         Text(event)
-                            .foregroundColor(viewModel.isEventSelected(event) ? .wbPinkMedium : .black.opacity(0.6))
+                            .foregroundColor(viewModel.isEventSelected(event) ? .black : .black.opacity(0.6))
                             .fontWeight(viewModel.isEventSelected(event) ? .bold : .regular)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .multilineTextAlignment(.leading)
                         Spacer()
                         Image(systemName: viewModel.isEventSelected(event) ? "checkmark.square" : "square")
+                            .font(.headline)
+                            .foregroundColor(viewModel.isCategorySelected(item) ? Color.wbPinkMedium : .gray)
                     }
                 }
             }

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct DestinationIconView: View {
+struct DestinationIconDataView: View {
     let iconData: Data?
     var size: CGFloat?
     
@@ -31,6 +31,20 @@ struct DestinationIconView: View {
     }
 }
 
+struct DestinationIconView: View {
+    let image: Image
+    var size: CGFloat?
+    
+    var body: some View {
+        self.image
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: size, height: size)
+            .edgesIgnoringSafeArea(.all)
+            .clipShape(RoundedRectangle(cornerRadius: 7))
+    }
+}
+
 struct DestinationBackgroundIconView: View {
     let iconData: Data?
     
@@ -49,8 +63,4 @@ struct DestinationBackgroundIconView: View {
             .clipped()
             .ignoresSafeArea(.all)
     }
-}
-
-#Preview {
-    DestinationIconView(iconData: Data())
 }

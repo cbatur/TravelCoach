@@ -8,7 +8,7 @@ struct LoadingItineraryView: View {
 
     var body: some View {
         ZStack {
-            DestinationIconView(iconData: self.icon)
+            DestinationIconDataView(iconData: self.icon)
                 .animation(.easeInOut(duration: 0.3), value: true)
                 .overlay(
                     GeometryReader { geometry in

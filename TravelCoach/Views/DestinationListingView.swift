@@ -18,7 +18,7 @@ struct DestinationCollectionView: View {
             ForEach(destinations) { destination in
                 NavigationLink(value: destination) {
                     HStack {
-                        DestinationIconView(iconData: destination.icon, size: 80)
+                        DestinationIconDataView(iconData: destination.icon, size: 80)
                         VStack(alignment: .leading) {
                             if destination.itinerary.count == 0 {
                                 Text("INCOMPLETE")
@@ -37,7 +37,7 @@ struct DestinationCollectionView: View {
                             }
                             
                             Text(destination.name)
-                                .font(.custom("Excon-Medium", size: 18))
+                                .font(.custom("Excon-Medium", size: 16))
                                 .foregroundColor(tripGroup.headerColor)
                             
                             Text("\(destination.startDate.formatted(date: .abbreviated, time: .omitted)) - \(destination.endDate.formatted(date: .abbreviated, time: .omitted))")
