@@ -41,7 +41,10 @@ struct EventView: View {
     }
     
     var body: some View {
-        Section("\(day.title)") {
+        Section(header: Text(day.title)
+                    .foregroundColor(.gray)
+                    .font(.custom("Satoshi-Bold", size: 16))) {
+                        
             Text("\(displayDailyDate(day.date))".uppercased())
                 .foregroundColor(.wbPinkMediumAlt)
                 .font(.custom("Satoshi-Bold", size: 16))

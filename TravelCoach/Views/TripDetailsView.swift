@@ -9,10 +9,7 @@ struct TripDetailsView: View {
     @Bindable var destination: Destination
     let tabTripItems: [TabViews] = [.overview, .reservations, .itinerary, .settings]
     @State private var selectedTab: TabViews = .overview
-    
-    //@State private var dateEntryLaunched = false
-    @State private var startDate = Date()
-    @State private var endDate = Date()
+
     @State private var launchUpdateIconView = false
 
     init(destination: Destination) {
@@ -80,17 +77,19 @@ struct TripDetailsView: View {
                         switch selectedTab {
                         case .overview:
                             _TabOverviewView(destination: destination)
+                                .transition(.opacity)
                         case .reservations:
                             _TabReservationsView(destination: destination)
+                                .transition(.opacity)
                         case .itinerary:
                             _TabItineraryView(destination: destination)
+                                .transition(.opacity)
                         case .settings:
                             _TabTripSettings(destination: destination)
+                                .transition(.opacity)
                         }
                     }
-                    .padding()
-                    .cardStyle()
-                    
+                    .animation(.easeInOut, value: selectedTab)
                 }
                 .frame(width: max(geometry.size.width - 20, 0))
             }

@@ -38,8 +38,9 @@ struct _TabItineraryView: View {
                     ForEach(destination.itinerary.sorted(by: { $0.index < $1.index }), id: \.self) { day in
                         EventView(day: day, city: destination.name)
                     }
-                    //.opacity(self.dateEntryLaunched ? 0.3 : 1.0)
                 }
+                .isHidden(destination.itinerary.count == 0)
+                .cardStyle(.clear)
             }
             
            VStack {
@@ -105,7 +106,8 @@ struct _TabItineraryView: View {
                        .padding()
                    }
                }
-               .background(Color.gray8.opacity(1))
+               .padding()
+               .cardStyle(.black.opacity(0.5))
                
            }
         }

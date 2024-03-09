@@ -10,7 +10,8 @@ struct _TabReservationsView: View {
     
     var body: some View {
         VStack {
-            ReservationsView()
+            Text("Reservations")
+            //ReservationsView()
         }
     }
 }
