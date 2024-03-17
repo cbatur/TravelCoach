@@ -56,7 +56,7 @@ struct DailyPlanView: View {
                 .padding()
             }
             .navigationDestination(isPresented: $proceedToReservations) {
-                ReservationsView()
+                //ReservationsView()
             }
             .onAppear {
                 self.chatAPIViewModel.getChatGPTContent(qType: .getDailyPlan(city: self.city, dateRange: "May 10 - May 16, 2024"), isMock: isMock)

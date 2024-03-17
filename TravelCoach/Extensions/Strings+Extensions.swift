@@ -26,7 +26,13 @@ extension String {
     }
     
     func searchSanitized() -> String {
-        var sanitized = self.replacingOccurrences(of: " ", with: "+")
+        let sanitized = self.replacingOccurrences(of: " ", with: "+")
         return sanitized
+    }
+}
+
+extension String {
+    func capitalizedFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst().lowercased()
     }
 }

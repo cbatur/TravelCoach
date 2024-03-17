@@ -20,9 +20,42 @@
 		7E10383A2B982F4D00544775 /* _TabItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038392B982F4D00544775 /* _TabItineraryView.swift */; };
 		7E10383C2B98302000544775 /* _TabTripSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10383B2B98302000544775 /* _TabTripSettings.swift */; };
 		7E10383E2B9830CD00544775 /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E10383D2B9830CD00544775 /* TabViews.swift */; };
+		7E1038422B9CD70A00544775 /* FlightManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1038412B9CD70A00544775 /* FlightManageView.swift */; };
 		7E3F96B82B871EDB00170E87 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3F96B72B871EDB00170E87 /* ColorKit.swift */; };
 		7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */; };
 		7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */; };
+		7E711D1A2B9EC1060002FC3D /* AE+FlightTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D192B9EC1060002FC3D /* AE+FlightTrack.swift */; };
+		7E711D1C2B9EC1530002FC3D /* AviationEdgeRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D1B2B9EC1530002FC3D /* AviationEdgeRequests.swift */; };
+		7E711D1F2B9EC3710002FC3D /* AviationEdgeAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D1E2B9EC3710002FC3D /* AviationEdgeAPIServices.swift */; };
+		7E711D212B9EC6380002FC3D /* _AviationEdgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D202B9EC6380002FC3D /* _AviationEdgeViewModel.swift */; };
+		7E711D232BA005B60002FC3D /* AE+Autocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D222BA005B60002FC3D /* AE+Autocomplete.swift */; };
+		7E711D262BA15FE00002FC3D /* AirlineCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D252BA15FE00002FC3D /* AirlineCodes.json */; };
+		7E711D282BA171750002FC3D /* AvionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D272BA171750002FC3D /* AvionModels.swift */; };
+		7E711D2A2BA174940002FC3D /* _StaticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D292BA174940002FC3D /* _StaticViewModel.swift */; };
+		7E711D2C2BA2BDD20002FC3D /* SelectAirlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */; };
+		7E711D2E2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2D2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift */; };
+		7E711D302BA4215E0002FC3D /* AE+FutureFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2F2BA4215E0002FC3D /* AE+FutureFlights.swift */; };
+		7E711D462BA68E050002FC3D /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D312BA68E050002FC3D /* Gilroy-Black.ttf */; };
+		7E711D472BA68E050002FC3D /* Gilroy-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D322BA68E050002FC3D /* Gilroy-BlackItalic.ttf */; };
+		7E711D482BA68E050002FC3D /* Gilroy-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D332BA68E050002FC3D /* Gilroy-Bold.ttf */; };
+		7E711D492BA68E050002FC3D /* Gilroy-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D342BA68E050002FC3D /* Gilroy-BoldItalic.ttf */; };
+		7E711D4A2BA68E050002FC3D /* Gilroy-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D352BA68E050002FC3D /* Gilroy-ExtraBold.ttf */; };
+		7E711D4B2BA68E050002FC3D /* Gilroy-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D362BA68E050002FC3D /* Gilroy-ExtraBoldItalic.ttf */; };
+		7E711D4C2BA68E050002FC3D /* Gilroy-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D372BA68E050002FC3D /* Gilroy-Heavy.ttf */; };
+		7E711D4D2BA68E050002FC3D /* Gilroy-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D382BA68E050002FC3D /* Gilroy-HeavyItalic.ttf */; };
+		7E711D4E2BA68E050002FC3D /* Gilroy-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D392BA68E050002FC3D /* Gilroy-Light.ttf */; };
+		7E711D4F2BA68E050002FC3D /* Gilroy-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3A2BA68E050002FC3D /* Gilroy-LightItalic.ttf */; };
+		7E711D502BA68E050002FC3D /* Gilroy-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3B2BA68E050002FC3D /* Gilroy-Medium.ttf */; };
+		7E711D512BA68E050002FC3D /* Gilroy-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3C2BA68E050002FC3D /* Gilroy-MediumItalic.ttf */; };
+		7E711D522BA68E050002FC3D /* Gilroy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3D2BA68E050002FC3D /* Gilroy-Regular.ttf */; };
+		7E711D532BA68E050002FC3D /* Gilroy-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3E2BA68E050002FC3D /* Gilroy-RegularItalic.ttf */; };
+		7E711D542BA68E050002FC3D /* Gilroy-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D3F2BA68E050002FC3D /* Gilroy-SemiBold.ttf */; };
+		7E711D552BA68E050002FC3D /* Gilroy-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D402BA68E050002FC3D /* Gilroy-SemiBoldItalic.ttf */; };
+		7E711D562BA68E050002FC3D /* Gilroy-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D412BA68E050002FC3D /* Gilroy-Thin.ttf */; };
+		7E711D572BA68E050002FC3D /* Gilroy-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D422BA68E050002FC3D /* Gilroy-ThinItalic.ttf */; };
+		7E711D582BA68E050002FC3D /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */; };
+		7E711D592BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */; };
+		7E711D5B2BA698140002FC3D /* BannerWithDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */; };
 		7E8218D82B92EE030090AA15 /* NavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */; };
 		7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */; };
 		7E8218DF2B92F4F80090AA15 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218DE2B92F4F80090AA15 /* AccountView.swift */; };
@@ -141,6 +174,8 @@
 		7E9B9C152B7B116B003D8607 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9C0B2B7B116A003D8607 /* Satoshi-Regular.otf */; };
 		7E9B9C162B7B116B003D8607 /* Satoshi-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9C0C2B7B116A003D8607 /* Satoshi-LightItalic.otf */; };
 		7E9B9C172B7B116B003D8607 /* Satoshi-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B9C0D2B7B116A003D8607 /* Satoshi-Black.otf */; };
+		7EB9FB522B9E579E004B4B3A /* AE_FlightStatus.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EB9FB512B9E579E004B4B3A /* AE_FlightStatus.json */; };
+		7EB9FB542B9E5803004B4B3A /* AvionEdgeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB9FB532B9E5803004B4B3A /* AvionEdgeModels.swift */; };
 		7EDD78862B918CAB00469E77 /* AddNewDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD78852B918CAB00469E77 /* AddNewDestinationView.swift */; };
 		7EDD78882B924BF500469E77 /* LoadingItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD78872B924BF500469E77 /* LoadingItineraryView.swift */; };
 		7EDD788A2B9286E400469E77 /* TripGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDD78892B9286E400469E77 /* TripGroup.swift */; };
@@ -176,9 +211,42 @@
 		7E1038392B982F4D00544775 /* _TabItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabItineraryView.swift; sourceTree = "<group>"; };
 		7E10383B2B98302000544775 /* _TabTripSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _TabTripSettings.swift; sourceTree = "<group>"; };
 		7E10383D2B9830CD00544775 /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		7E1038412B9CD70A00544775 /* FlightManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightManageView.swift; sourceTree = "<group>"; };
 		7E3F96B72B871EDB00170E87 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
 		7E5A75962B8317E900B870A7 /* RemoteIconCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteIconCellView.swift; sourceTree = "<group>"; };
 		7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDestinationIcon.swift; sourceTree = "<group>"; };
+		7E711D192B9EC1060002FC3D /* AE+FlightTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AE+FlightTrack.swift"; sourceTree = "<group>"; };
+		7E711D1B2B9EC1530002FC3D /* AviationEdgeRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationEdgeRequests.swift; sourceTree = "<group>"; };
+		7E711D1E2B9EC3710002FC3D /* AviationEdgeAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AviationEdgeAPIServices.swift; sourceTree = "<group>"; };
+		7E711D202B9EC6380002FC3D /* _AviationEdgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _AviationEdgeViewModel.swift; sourceTree = "<group>"; };
+		7E711D222BA005B60002FC3D /* AE+Autocomplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AE+Autocomplete.swift"; sourceTree = "<group>"; };
+		7E711D252BA15FE00002FC3D /* AirlineCodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AirlineCodes.json; sourceTree = "<group>"; };
+		7E711D272BA171750002FC3D /* AvionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvionModels.swift; sourceTree = "<group>"; };
+		7E711D292BA174940002FC3D /* _StaticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _StaticViewModel.swift; sourceTree = "<group>"; };
+		7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAirlineView.swift; sourceTree = "<group>"; };
+		7E711D2D2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _AvionEdgeAutocompleteViewModel.swift; sourceTree = "<group>"; };
+		7E711D2F2BA4215E0002FC3D /* AE+FutureFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AE+FutureFlights.swift"; sourceTree = "<group>"; };
+		7E711D312BA68E050002FC3D /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
+		7E711D322BA68E050002FC3D /* Gilroy-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7E711D332BA68E050002FC3D /* Gilroy-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Bold.ttf"; sourceTree = "<group>"; };
+		7E711D342BA68E050002FC3D /* Gilroy-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7E711D352BA68E050002FC3D /* Gilroy-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7E711D362BA68E050002FC3D /* Gilroy-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7E711D372BA68E050002FC3D /* Gilroy-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Heavy.ttf"; sourceTree = "<group>"; };
+		7E711D382BA68E050002FC3D /* Gilroy-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-HeavyItalic.ttf"; sourceTree = "<group>"; };
+		7E711D392BA68E050002FC3D /* Gilroy-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Light.ttf"; sourceTree = "<group>"; };
+		7E711D3A2BA68E050002FC3D /* Gilroy-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-LightItalic.ttf"; sourceTree = "<group>"; };
+		7E711D3B2BA68E050002FC3D /* Gilroy-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Medium.ttf"; sourceTree = "<group>"; };
+		7E711D3C2BA68E050002FC3D /* Gilroy-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7E711D3D2BA68E050002FC3D /* Gilroy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Regular.ttf"; sourceTree = "<group>"; };
+		7E711D3E2BA68E050002FC3D /* Gilroy-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-RegularItalic.ttf"; sourceTree = "<group>"; };
+		7E711D3F2BA68E050002FC3D /* Gilroy-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBold.ttf"; sourceTree = "<group>"; };
+		7E711D402BA68E050002FC3D /* Gilroy-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		7E711D412BA68E050002FC3D /* Gilroy-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Thin.ttf"; sourceTree = "<group>"; };
+		7E711D422BA68E050002FC3D /* Gilroy-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
+		7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.ttf"; sourceTree = "<group>"; };
+		7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWithDismiss.swift; sourceTree = "<group>"; };
 		7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToolbar.swift; sourceTree = "<group>"; };
 		7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDestinationButton.swift; sourceTree = "<group>"; };
 		7E8218DE2B92F4F80090AA15 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -299,6 +367,8 @@
 		7E9B9C0B2B7B116A003D8607 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
 		7E9B9C0C2B7B116A003D8607 /* Satoshi-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-LightItalic.otf"; sourceTree = "<group>"; };
 		7E9B9C0D2B7B116A003D8607 /* Satoshi-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Black.otf"; sourceTree = "<group>"; };
+		7EB9FB512B9E579E004B4B3A /* AE_FlightStatus.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AE_FlightStatus.json; sourceTree = "<group>"; };
+		7EB9FB532B9E5803004B4B3A /* AvionEdgeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvionEdgeModels.swift; sourceTree = "<group>"; };
 		7EDD78852B918CAB00469E77 /* AddNewDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDestinationView.swift; sourceTree = "<group>"; };
 		7EDD78872B924BF500469E77 /* LoadingItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingItineraryView.swift; sourceTree = "<group>"; };
 		7EDD78892B9286E400469E77 /* TripGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripGroup.swift; sourceTree = "<group>"; };
@@ -347,6 +417,9 @@
 				7E8CA64D2B6D6A94006A2ABE /* _PlacesViewModel.swift */,
 				7E10382A2B95A43000544775 /* _GooglePlacesViewModel.swift */,
 				7E8CA6292B6760F2006A2ABE /* _MockServicesViewModel.swift */,
+				7E711D202B9EC6380002FC3D /* _AviationEdgeViewModel.swift */,
+				7E711D292BA174940002FC3D /* _StaticViewModel.swift */,
+				7E711D2D2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,6 +430,26 @@
 				7E1038302B96B46F00544775 /* CryptoSwift.swift */,
 			);
 			path = Security;
+			sourceTree = "<group>";
+		};
+		7E10383F2B9CD6D500544775 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				7E1038352B982E8400544775 /* _TabOverviewView.swift */,
+				7E1038372B982F0500544775 /* _TabReservationsView.swift */,
+				7E1038392B982F4D00544775 /* _TabItineraryView.swift */,
+				7E10383B2B98302000544775 /* _TabTripSettings.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		7E1038402B9CD6E500544775 /* Reservations */ = {
+			isa = PBXGroup;
+			children = (
+				7E1038412B9CD70A00544775 /* FlightManageView.swift */,
+				7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */,
+			);
+			path = Reservations;
 			sourceTree = "<group>";
 		};
 		7E3F96B62B871EC900170E87 /* Style */ = {
@@ -373,6 +466,61 @@
 				7E5A75992B831BD200B870A7 /* UpdateDestinationIcon.swift */,
 			);
 			path = UpdateViews;
+			sourceTree = "<group>";
+		};
+		7E711D182B9EC0AF0002FC3D /* AviationEdge+Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7E711D1B2B9EC1530002FC3D /* AviationEdgeRequests.swift */,
+				7E711D192B9EC1060002FC3D /* AE+FlightTrack.swift */,
+				7E711D222BA005B60002FC3D /* AE+Autocomplete.swift */,
+				7E711D2F2BA4215E0002FC3D /* AE+FutureFlights.swift */,
+			);
+			path = "AviationEdge+Requests";
+			sourceTree = "<group>";
+		};
+		7E711D1D2B9EC32F0002FC3D /* AviationEdge */ = {
+			isa = PBXGroup;
+			children = (
+				7E711D182B9EC0AF0002FC3D /* AviationEdge+Requests */,
+				7E711D1E2B9EC3710002FC3D /* AviationEdgeAPIServices.swift */,
+			);
+			path = AviationEdge;
+			sourceTree = "<group>";
+		};
+		7E711D242BA15FBA0002FC3D /* Functional Responses */ = {
+			isa = PBXGroup;
+			children = (
+				7E711D252BA15FE00002FC3D /* AirlineCodes.json */,
+			);
+			path = "Functional Responses";
+			sourceTree = "<group>";
+		};
+		7E711D452BA68E050002FC3D /* Gilroy */ = {
+			isa = PBXGroup;
+			children = (
+				7E711D312BA68E050002FC3D /* Gilroy-Black.ttf */,
+				7E711D322BA68E050002FC3D /* Gilroy-BlackItalic.ttf */,
+				7E711D332BA68E050002FC3D /* Gilroy-Bold.ttf */,
+				7E711D342BA68E050002FC3D /* Gilroy-BoldItalic.ttf */,
+				7E711D352BA68E050002FC3D /* Gilroy-ExtraBold.ttf */,
+				7E711D362BA68E050002FC3D /* Gilroy-ExtraBoldItalic.ttf */,
+				7E711D372BA68E050002FC3D /* Gilroy-Heavy.ttf */,
+				7E711D382BA68E050002FC3D /* Gilroy-HeavyItalic.ttf */,
+				7E711D392BA68E050002FC3D /* Gilroy-Light.ttf */,
+				7E711D3A2BA68E050002FC3D /* Gilroy-LightItalic.ttf */,
+				7E711D3B2BA68E050002FC3D /* Gilroy-Medium.ttf */,
+				7E711D3C2BA68E050002FC3D /* Gilroy-MediumItalic.ttf */,
+				7E711D3D2BA68E050002FC3D /* Gilroy-Regular.ttf */,
+				7E711D3E2BA68E050002FC3D /* Gilroy-RegularItalic.ttf */,
+				7E711D3F2BA68E050002FC3D /* Gilroy-SemiBold.ttf */,
+				7E711D402BA68E050002FC3D /* Gilroy-SemiBoldItalic.ttf */,
+				7E711D412BA68E050002FC3D /* Gilroy-Thin.ttf */,
+				7E711D422BA68E050002FC3D /* Gilroy-ThinItalic.ttf */,
+				7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */,
+				7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */,
+			);
+			path = Gilroy;
 			sourceTree = "<group>";
 		};
 		7E8218DB2B92F4CB0090AA15 /* Account */ = {
@@ -394,13 +542,12 @@
 		7E8218E72B944BA30090AA15 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				7E8CA63F2B68B691006A2ABE /* Shared */,
+				7E1038402B9CD6E500544775 /* Reservations */,
+				7E10383F2B9CD6D500544775 /* Tabs */,
 				7E8218E82B944BCD0090AA15 /* EventSubViews.swift */,
 				7E1038282B95909400544775 /* CityTitleBannerView.swift */,
 				7E10382D2B95B44B00544775 /* NavigationBarSubViews.swift */,
-				7E1038352B982E8400544775 /* _TabOverviewView.swift */,
-				7E1038372B982F0500544775 /* _TabReservationsView.swift */,
-				7E1038392B982F4D00544775 /* _TabItineraryView.swift */,
-				7E10383B2B98302000544775 /* _TabTripSettings.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -410,6 +557,7 @@
 			children = (
 				7E8CA6272B67600B006A2ABE /* itinerary.json */,
 				7E8A4F292B8BECD30075EB11 /* allEvents.json */,
+				7EB9FB512B9E579E004B4B3A /* AE_FlightStatus.json */,
 			);
 			path = "Sample Responses";
 			sourceTree = "<group>";
@@ -504,7 +652,6 @@
 				7E8218E42B9301B00090AA15 /* Launch */,
 				7E8218DB2B92F4CB0090AA15 /* Account */,
 				7E5A75982B831BB300B870A7 /* UpdateViews */,
-				7E8CA63F2B68B691006A2ABE /* Shared */,
 				7E9B9B762B74941A003D8607 /* TripsView.swift */,
 				7E9B9B7E2B74A666003D8607 /* DestinationListingView.swift */,
 				7E8CA6202B64A526006A2ABE /* CalendarView.swift */,
@@ -529,6 +676,8 @@
 				7E8CA64B2B6D659C006A2ABE /* Location.swift */,
 				7E9B9B782B749851003D8607 /* Destination.swift */,
 				7E8A4F2B2B8BF1760075EB11 /* AllEvents.swift */,
+				7EB9FB532B9E5803004B4B3A /* AvionEdgeModels.swift */,
+				7E711D272BA171750002FC3D /* AvionModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -536,6 +685,7 @@
 		7E8CA6262B675FE7006A2ABE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E711D242BA15FBA0002FC3D /* Functional Responses */,
 				7E8A4F282B8BECA50075EB11 /* Sample Responses */,
 				7E9B9B822B7B0617003D8607 /* Fonts */,
 			);
@@ -545,6 +695,7 @@
 		7E8CA62B2B68A05D006A2ABE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7E711D1D2B9EC32F0002FC3D /* AviationEdge */,
 				7E8CA62C2B68A129006A2ABE /* APIServices.swift */,
 				7E8CA62D2B68A129006A2ABE /* Requests.swift */,
 			);
@@ -589,6 +740,7 @@
 				7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */,
 				7E8218E02B92F61A0090AA15 /* SideMenuView.swift */,
 				7E8218E22B92F65F0090AA15 /* SideMenu.swift */,
+				7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -604,6 +756,7 @@
 		7E9B9B822B7B0617003D8607 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7E711D452BA68E050002FC3D /* Gilroy */,
 				7E9B9C032B7B1143003D8607 /* Satoshi */,
 				7E9B9BF62B7B10B8003D8607 /* Excon */,
 				7E9B9BDD2B7B0F5B003D8607 /* Author */,
@@ -841,8 +994,11 @@
 				7E8CA6282B67600B006A2ABE /* itinerary.json in Resources */,
 				7E9B9BB02B7B0618003D8607 /* Bevellier-Thin.otf in Resources */,
 				7E9B9C0F2B7B116B003D8607 /* Satoshi-Medium.otf in Resources */,
+				7E711D482BA68E050002FC3D /* Gilroy-Bold.ttf in Resources */,
 				7E9B9C0E2B7B116B003D8607 /* Satoshi-BoldItalic.otf in Resources */,
+				7E711D512BA68E050002FC3D /* Gilroy-MediumItalic.ttf in Resources */,
 				7E9B9C172B7B116B003D8607 /* Satoshi-Black.otf in Resources */,
+				7E711D532BA68E050002FC3D /* Gilroy-RegularItalic.ttf in Resources */,
 				7E9B9BA22B7B0618003D8607 /* Tanker-Regular.otf in Resources */,
 				7E8CA5EB2B6223E4006A2ABE /* Preview Assets.xcassets in Resources */,
 				7E9B9BBC2B7B0618003D8607 /* BespokeStencil-Regular.otf in Resources */,
@@ -852,8 +1008,10 @@
 				7E9B9BFD2B7B10C8003D8607 /* Excon-Light.otf in Resources */,
 				7E9B9BEB2B7B0F6F003D8607 /* Author-ExtralightItalic.otf in Resources */,
 				7E9B9C112B7B116B003D8607 /* Satoshi-MediumItalic.otf in Resources */,
+				7E711D572BA68E050002FC3D /* Gilroy-ThinItalic.ttf in Resources */,
 				7E9B9BEE2B7B0F6F003D8607 /* Author-Medium.otf in Resources */,
 				7E9B9BB82B7B0618003D8607 /* BespokeStencil-Light.otf in Resources */,
+				7E711D472BA68E050002FC3D /* Gilroy-BlackItalic.ttf in Resources */,
 				7E9B9BAB2B7B0618003D8607 /* Bevellier-LightItalic.otf in Resources */,
 				7E9B9C142B7B116B003D8607 /* Satoshi-Light.otf in Resources */,
 				7E9B9BD22B7B064B003D8607 /* Boska-Italic.otf in Resources */,
@@ -872,26 +1030,38 @@
 				7E9B9BFF2B7B10C8003D8607 /* Excon-Regular.otf in Resources */,
 				7E9B9C012B7B10C8003D8607 /* Excon-Black.otf in Resources */,
 				7E9B9BD52B7B064B003D8607 /* Boska-BlackItalic.otf in Resources */,
+				7E711D562BA68E050002FC3D /* Gilroy-Thin.ttf in Resources */,
 				7E9B9BB22B7B0618003D8607 /* Bevellier-ExtralightItalic.otf in Resources */,
 				7E9B9C162B7B116B003D8607 /* Satoshi-LightItalic.otf in Resources */,
 				7E9B9BA42B7B0618003D8607 /* Bevellier-BoldItalic.otf in Resources */,
 				7E9B9BB32B7B0618003D8607 /* BespokeStencil-Italic.otf in Resources */,
 				7E9B9BFE2B7B10C8003D8607 /* Excon-Medium.otf in Resources */,
+				7E711D542BA68E050002FC3D /* Gilroy-SemiBold.ttf in Resources */,
 				7E9B9BEA2B7B0F6F003D8607 /* Author-Light.otf in Resources */,
 				7E9B9BAA2B7B0618003D8607 /* Bevellier-Light.otf in Resources */,
 				7E9B9BCB2B7B064B003D8607 /* Boska-BoldItalic.otf in Resources */,
 				7E9B9C002B7B10C8003D8607 /* Excon-Thin.otf in Resources */,
+				7E711D582BA68E050002FC3D /* Gilroy-UltraLight.ttf in Resources */,
+				7EB9FB522B9E579E004B4B3A /* AE_FlightStatus.json in Resources */,
+				7E711D592BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf in Resources */,
 				7E9B9BA62B7B0618003D8607 /* Bevellier-Extralight.otf in Resources */,
 				7E9B9BA32B7B0618003D8607 /* Bevellier-BlackItalic.otf in Resources */,
 				7E9B9BF52B7B0F6F003D8607 /* Author-LightItalic.otf in Resources */,
 				7E9B9BF02B7B0F6F003D8607 /* Author-Extralight.otf in Resources */,
 				7E9B9BCF2B7B064B003D8607 /* Boska-ExtralightItalic.otf in Resources */,
 				7E9B9BD42B7B064B003D8607 /* Boska-MediumItalic.otf in Resources */,
+				7E711D4B2BA68E050002FC3D /* Gilroy-ExtraBoldItalic.ttf in Resources */,
+				7E711D4E2BA68E050002FC3D /* Gilroy-Light.ttf in Resources */,
 				7E9B9BF42B7B0F6F003D8607 /* Author-SemiboldItalic.otf in Resources */,
+				7E711D4D2BA68E050002FC3D /* Gilroy-HeavyItalic.ttf in Resources */,
+				7E711D492BA68E050002FC3D /* Gilroy-BoldItalic.ttf in Resources */,
+				7E711D4A2BA68E050002FC3D /* Gilroy-ExtraBold.ttf in Resources */,
+				7E711D552BA68E050002FC3D /* Gilroy-SemiBoldItalic.ttf in Resources */,
 				7E9B9BAE2B7B0618003D8607 /* Bevellier-Italic.otf in Resources */,
 				7E9B9BB52B7B0618003D8607 /* BespokeStencil-Medium.otf in Resources */,
 				7E9B9BF12B7B0F6F003D8607 /* Author-MediumItalic.otf in Resources */,
 				7E9B9BF32B7B0F6F003D8607 /* Author-Semibold.otf in Resources */,
+				7E711D4C2BA68E050002FC3D /* Gilroy-Heavy.ttf in Resources */,
 				7E9B9BB42B7B0618003D8607 /* BespokeStencil-BoldItalic.otf in Resources */,
 				7E9B9BF22B7B0F6F003D8607 /* Author-Regular.otf in Resources */,
 				7E9B9C132B7B116B003D8607 /* Satoshi-Italic.otf in Resources */,
@@ -900,16 +1070,21 @@
 				7E9B9BA12B7B0618003D8607 /* Stardom-Regular.otf in Resources */,
 				7E9B9BB72B7B0618003D8607 /* BespokeStencil-Bold.otf in Resources */,
 				7E9B9BCD2B7B064B003D8607 /* Boska-Black.otf in Resources */,
+				7E711D462BA68E050002FC3D /* Gilroy-Black.ttf in Resources */,
+				7E711D502BA68E050002FC3D /* Gilroy-Medium.ttf in Resources */,
 				7E9B9BAF2B7B0618003D8607 /* Bevellier-Bold.otf in Resources */,
 				7E9B9BB92B7B0618003D8607 /* BespokeStencil-ExtraboldItalic.otf in Resources */,
 				7E9B9BD32B7B064B003D8607 /* Boska-Medium.otf in Resources */,
 				7E9B9C022B7B10C8003D8607 /* Excon-Bold.otf in Resources */,
+				7E711D262BA15FE00002FC3D /* AirlineCodes.json in Resources */,
 				7E9B9BBA2B7B0618003D8607 /* BespokeStencil-MediumItalic.otf in Resources */,
 				7E9B9BAD2B7B0618003D8607 /* Bevellier-Black.otf in Resources */,
 				7E8A4F2A2B8BECD30075EB11 /* allEvents.json in Resources */,
 				7E9B9BA52B7B0618003D8607 /* Bevellier-ThinItalic.otf in Resources */,
 				7E9B9BB12B7B0618003D8607 /* Bevellier-MediumItalic.otf in Resources */,
 				7E9B9C152B7B116B003D8607 /* Satoshi-Regular.otf in Resources */,
+				7E711D522BA68E050002FC3D /* Gilroy-Regular.ttf in Resources */,
+				7E711D4F2BA68E050002FC3D /* Gilroy-LightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,22 +1114,28 @@
 				7E8CA6392B68A50A006A2ABE /* _ChatAPIViewModel.swift in Sources */,
 				7E8CA6162B623100006A2ABE /* CalendarMonthView.swift in Sources */,
 				7E8CA63B2B68A834006A2ABE /* GPTResponseModels.swift in Sources */,
+				7E711D2E2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift in Sources */,
 				7E10383E2B9830CD00544775 /* TabViews.swift in Sources */,
+				7E711D1F2B9EC3710002FC3D /* AviationEdgeAPIServices.swift in Sources */,
 				7E8CA6252B6758A3006A2ABE /* DailyPlanView.swift in Sources */,
 				7E8CA64C2B6D659C006A2ABE /* Location.swift in Sources */,
+				7E711D212B9EC6380002FC3D /* _AviationEdgeViewModel.swift in Sources */,
 				7E8CA6472B6AD67A006A2ABE /* ActivityIndicatorMessage.swift in Sources */,
 				7E5A75972B8317E900B870A7 /* RemoteIconCellView.swift in Sources */,
 				7E8CA62F2B68A129006A2ABE /* Requests.swift in Sources */,
 				7E9B9B7F2B74A666003D8607 /* DestinationListingView.swift in Sources */,
 				7E1038382B982F0500544775 /* _TabReservationsView.swift in Sources */,
 				7E9B9B772B74941A003D8607 /* TripsView.swift in Sources */,
+				7E711D282BA171750002FC3D /* AvionModels.swift in Sources */,
 				7E8CA64E2B6D6A94006A2ABE /* _PlacesViewModel.swift in Sources */,
 				7E8CA5E42B6223E3006A2ABE /* TravelCoachApp.swift in Sources */,
 				7E8CA6522B6D7F2B006A2ABE /* Strings+Extensions.swift in Sources */,
 				7E9B9B792B749851003D8607 /* Destination.swift in Sources */,
 				7E8CA61A2B62347A006A2ABE /* String+DateUtilities.swift in Sources */,
 				7EDD788A2B9286E400469E77 /* TripGroup.swift in Sources */,
+				7E711D2C2BA2BDD20002FC3D /* SelectAirlineView.swift in Sources */,
 				7E8218E92B944BCD0090AA15 /* EventSubViews.swift in Sources */,
+				7E711D2A2BA174940002FC3D /* _StaticViewModel.swift in Sources */,
 				7E8CA6232B64C4E9006A2ABE /* Color+Extensions.swift in Sources */,
 				7E8A4F2E2B8BF3730075EB11 /* AllEventsSelectionView.swift in Sources */,
 				7EDD78882B924BF500469E77 /* LoadingItineraryView.swift in Sources */,
@@ -965,6 +1146,7 @@
 				7E8218E62B9301CA0090AA15 /* LaunchScreenView.swift in Sources */,
 				7E8CA6412B68B69C006A2ABE /* LoadingView.swift in Sources */,
 				7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */,
+				7E711D232BA005B60002FC3D /* AE+Autocomplete.swift in Sources */,
 				7E1038292B95909400544775 /* CityTitleBannerView.swift in Sources */,
 				7E10383C2B98302000544775 /* _TabTripSettings.swift in Sources */,
 				7E8CA6432B6A2A7C006A2ABE /* Icons.swift in Sources */,
@@ -983,16 +1165,22 @@
 				7E9B9B7D2B749EB3003D8607 /* TripDetailsView.swift in Sources */,
 				7E8218DF2B92F4F80090AA15 /* AccountView.swift in Sources */,
 				7E8218D82B92EE030090AA15 /* NavigationToolbar.swift in Sources */,
+				7E711D5B2BA698140002FC3D /* BannerWithDismiss.swift in Sources */,
 				7E8218E32B92F65F0090AA15 /* SideMenu.swift in Sources */,
 				7E8A4F2C2B8BF1760075EB11 /* AllEvents.swift in Sources */,
 				7E5A759A2B831BD200B870A7 /* UpdateDestinationIcon.swift in Sources */,
+				7EB9FB542B9E5803004B4B3A /* AvionEdgeModels.swift in Sources */,
 				7E8CA6312B68A143006A2ABE /* ChatGPTResponse.swift in Sources */,
 				7E10382B2B95A43000544775 /* _GooglePlacesViewModel.swift in Sources */,
+				7E711D302BA4215E0002FC3D /* AE+FutureFlights.swift in Sources */,
+				7E711D1A2B9EC1060002FC3D /* AE+FlightTrack.swift in Sources */,
 				7E8CA6132B622E43006A2ABE /* UIView+Utilities.swift in Sources */,
+				7E1038422B9CD70A00544775 /* FlightManageView.swift in Sources */,
 				7E8CA6542B6EDAEE006A2ABE /* ReservationsView.swift in Sources */,
 				7E1038272B9582BE00544775 /* AnimationsView.swift in Sources */,
 				7E00557C2B81D281002606E2 /* DestinationIconView.swift in Sources */,
 				7E8CA61C2B637AA5006A2ABE /* Calendar+Utilities.swift in Sources */,
+				7E711D1C2B9EC1530002FC3D /* AviationEdgeRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,7 +1342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 3.4;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;
@@ -1185,7 +1373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.2;
+				CURRENT_PROJECT_VERSION = 3.4;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;

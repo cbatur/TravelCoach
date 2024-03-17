@@ -68,7 +68,6 @@ struct CBCalendarEventCell: View {
             }
         }
         
-        print("\(startDate) - \(endDate)")
         dates(startDate, endDate)
     }
     

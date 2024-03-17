@@ -91,7 +91,6 @@ final class ChatAPIViewModel: ObservableObject {
                         
                     } catch {
                         self.getChatGPTContent(qType: qType)
-                        print("[Debug] Error deserializing JSON: \(error)")
                     }
                 }
             })

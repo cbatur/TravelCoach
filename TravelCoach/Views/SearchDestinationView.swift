@@ -54,7 +54,6 @@ struct SearchDestinationView: View {
                 self.populateEvents(newValue)
             }
             .onChange(of: chatAPIViewModel.imageData) { oldData, newData in
-                print("[Debug] new \(newData)")
                 destination.icon = newData
             }
             .navigationBarTitle("", displayMode: .inline)

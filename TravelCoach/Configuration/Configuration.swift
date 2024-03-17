@@ -15,6 +15,16 @@ enum Configuration {
         static let encryptedBase64 = "53MRYmA5dFF/zlrptbKdlULfEgbo2oJvI84MW+fbIPngPlw8rQw1Wh0GddStM9ud2PG5iQ1IoifkyeqWUm+e7g=="
     }
     
+    enum AmadeusFlight {
+        // Developer Keys
+        static let apiKey = "ATxQY0npvb1RzezkdcFsLwADX2WCdH37"
+        static let apiSecret = "wNDS5wMQp6ldux6D"
+    }
+    
+    enum AvionEdge {
+        static let apiKey = "ba7baa-a8f425"
+    }
+    
     enum Links {
         static let agreementsURL = URL(string: "\(environment)agreements/termsagreements.php")!
         static let privacyPolicyURL = URL(string: "\(environment)agreements/privacypolicy.php")!

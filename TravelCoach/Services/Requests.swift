@@ -79,7 +79,6 @@ enum Requests {
             let iv = Array<UInt8>(hex: ivHex)
 
             guard let encryptedBytes = Data(base64Encoded: encryptedBase64)?.bytes else {
-                print("[Debug] Decryption failed: Invalid base64 string")
                 return nil
             }
 
@@ -89,11 +88,9 @@ enum Requests {
             if let decryptedString = String(bytes: decryptedBytes, encoding: .utf8) {
                 return decryptedString
             } else {
-                print("[Debug] Decryption failed: Could not convert bytes to string")
                 return nil
             }
         } catch {
-            print("[Debug] An error occurred: \(error)")
             return nil
         }
     }

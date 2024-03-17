@@ -2,46 +2,54 @@
 import SwiftUI
 
 struct ReservationsView: View {
-    let travelData: [TravelSection] = [
-        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-        ]),
-        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-        ]),
-        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-        ]),
-        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-        ])
-    ]
+//    let travelData: [TravelSection] = [
+//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
+//        ]),
+//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
+//        ]),
+//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
+//        ]),
+//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
+//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
+//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
+//        ])
+//    ]
+    
+    
+    
+    var travelData: [TravelSection] = []
 
+    init(_ travelData: [TravelSection]) {
+        self.travelData = travelData
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text("Flights, Hotels and Car Rentals")
-                    .font(.custom("Bevellier-Regular", size: 22))
-                    .foregroundColor(Color.wbPinkMediumAlt)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
+
                 
                 List {
                     ForEach(travelData) { section in
                         Section(header: Text(section.title)) {
                             ForEach(section.items) { item in
                                 HStack {
+                                    VStack {
+                                        Text(item.scheduledTime)
+                                            .fontWeight(.semibold)
+                                    }
                                     Image(systemName: item.iconName)
                                     VStack(alignment: .leading) {
-                                        Text(item.title)
+                                        Text(item.title.uppercased())
                                             .fontWeight(.semibold)
                                         Text(item.subtitle)
                                             .font(.subheadline)
@@ -68,4 +76,5 @@ struct TravelItem: Identifiable {
     let iconName: String
     let title: String
     let subtitle: String
+    let scheduledTime: String
 }
