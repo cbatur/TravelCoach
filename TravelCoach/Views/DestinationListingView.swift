@@ -12,8 +12,9 @@ struct DestinationCollectionView: View {
         if destinations.count > 0 {
             
             Text(tripGroup.title)
-                .font(.custom("Bevellier-Regular", size: 26))
+                .font(.custom("Gilroy-Bold", size: 26))
                 .foregroundColor(tripGroup.foreColor)
+                .padding(.top, 7)
             
             ForEach(destinations) { destination in
                 NavigationLink(value: destination) {
@@ -37,11 +38,11 @@ struct DestinationCollectionView: View {
                             }
                             
                             Text(destination.name)
-                                .font(.custom("Excon-Medium", size: 16))
+                                .font(.custom("Gilroy-Medium", size: 18))
                                 .foregroundColor(tripGroup.headerColor)
                             
                             Text("\(destination.startDate.formatted(date: .abbreviated, time: .omitted)) - \(destination.endDate.formatted(date: .abbreviated, time: .omitted))")
-                                .font(.caption)
+                                .font(.custom("Gilroy-Regular", size: 15))
                         }
                     }
                 }

@@ -35,7 +35,11 @@ class AvionEdgeAutocompleteViewModel: ObservableObject {
             .map(\.data)
             .decode(type: AEAirport.self, decoder: JSONDecoder())
             .map { response in
-                response.airportsByCities.map { $0 }
+                response.airportsByCities
+                    .filter({
+                        !$0.codeIcaoAirport.isEmpty
+                    })
+                    .map { $0 }
             }
             .print()
             .receive(on: DispatchQueue.main)

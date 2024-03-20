@@ -32,7 +32,7 @@
 		7E711D262BA15FE00002FC3D /* AirlineCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D252BA15FE00002FC3D /* AirlineCodes.json */; };
 		7E711D282BA171750002FC3D /* AvionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D272BA171750002FC3D /* AvionModels.swift */; };
 		7E711D2A2BA174940002FC3D /* _StaticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D292BA174940002FC3D /* _StaticViewModel.swift */; };
-		7E711D2C2BA2BDD20002FC3D /* SelectAirlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */; };
+		7E711D2C2BA2BDD20002FC3D /* SelectFlightsResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2B2BA2BDD20002FC3D /* SelectFlightsResultsView.swift */; };
 		7E711D2E2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2D2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift */; };
 		7E711D302BA4215E0002FC3D /* AE+FutureFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D2F2BA4215E0002FC3D /* AE+FutureFlights.swift */; };
 		7E711D462BA68E050002FC3D /* Gilroy-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D312BA68E050002FC3D /* Gilroy-Black.ttf */; };
@@ -56,6 +56,8 @@
 		7E711D582BA68E050002FC3D /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */; };
 		7E711D592BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */; };
 		7E711D5B2BA698140002FC3D /* BannerWithDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */; };
+		7E711D5D2BAA9CD90002FC3D /* RecentFlightSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */; };
+		7E711D5F2BAAA32A0002FC3D /* AirportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5E2BAAA32A0002FC3D /* AirportType.swift */; };
 		7E8218D82B92EE030090AA15 /* NavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */; };
 		7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */; };
 		7E8218DF2B92F4F80090AA15 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218DE2B92F4F80090AA15 /* AccountView.swift */; };
@@ -223,7 +225,7 @@
 		7E711D252BA15FE00002FC3D /* AirlineCodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AirlineCodes.json; sourceTree = "<group>"; };
 		7E711D272BA171750002FC3D /* AvionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvionModels.swift; sourceTree = "<group>"; };
 		7E711D292BA174940002FC3D /* _StaticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _StaticViewModel.swift; sourceTree = "<group>"; };
-		7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAirlineView.swift; sourceTree = "<group>"; };
+		7E711D2B2BA2BDD20002FC3D /* SelectFlightsResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFlightsResultsView.swift; sourceTree = "<group>"; };
 		7E711D2D2BA3FE760002FC3D /* _AvionEdgeAutocompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _AvionEdgeAutocompleteViewModel.swift; sourceTree = "<group>"; };
 		7E711D2F2BA4215E0002FC3D /* AE+FutureFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AE+FutureFlights.swift"; sourceTree = "<group>"; };
 		7E711D312BA68E050002FC3D /* Gilroy-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-Black.ttf"; sourceTree = "<group>"; };
@@ -247,6 +249,8 @@
 		7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
 		7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.ttf"; sourceTree = "<group>"; };
 		7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWithDismiss.swift; sourceTree = "<group>"; };
+		7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFlightSearchesView.swift; sourceTree = "<group>"; };
+		7E711D5E2BAAA32A0002FC3D /* AirportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportType.swift; sourceTree = "<group>"; };
 		7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToolbar.swift; sourceTree = "<group>"; };
 		7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDestinationButton.swift; sourceTree = "<group>"; };
 		7E8218DE2B92F4F80090AA15 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -447,7 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				7E1038412B9CD70A00544775 /* FlightManageView.swift */,
-				7E711D2B2BA2BDD20002FC3D /* SelectAirlineView.swift */,
+				7E711D2B2BA2BDD20002FC3D /* SelectFlightsResultsView.swift */,
+				7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */,
 			);
 			path = Reservations;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				7E8CA6462B6AD67A006A2ABE /* ActivityIndicatorMessage.swift */,
 				7EDD78892B9286E400469E77 /* TripGroup.swift */,
 				7E10383D2B9830CD00544775 /* TabViews.swift */,
+				7E711D5E2BAAA32A0002FC3D /* AirportType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1128,12 +1134,14 @@
 				7E9B9B772B74941A003D8607 /* TripsView.swift in Sources */,
 				7E711D282BA171750002FC3D /* AvionModels.swift in Sources */,
 				7E8CA64E2B6D6A94006A2ABE /* _PlacesViewModel.swift in Sources */,
+				7E711D5D2BAA9CD90002FC3D /* RecentFlightSearchesView.swift in Sources */,
 				7E8CA5E42B6223E3006A2ABE /* TravelCoachApp.swift in Sources */,
 				7E8CA6522B6D7F2B006A2ABE /* Strings+Extensions.swift in Sources */,
 				7E9B9B792B749851003D8607 /* Destination.swift in Sources */,
+				7E711D5F2BAAA32A0002FC3D /* AirportType.swift in Sources */,
 				7E8CA61A2B62347A006A2ABE /* String+DateUtilities.swift in Sources */,
 				7EDD788A2B9286E400469E77 /* TripGroup.swift in Sources */,
-				7E711D2C2BA2BDD20002FC3D /* SelectAirlineView.swift in Sources */,
+				7E711D2C2BA2BDD20002FC3D /* SelectFlightsResultsView.swift in Sources */,
 				7E8218E92B944BCD0090AA15 /* EventSubViews.swift in Sources */,
 				7E711D2A2BA174940002FC3D /* _StaticViewModel.swift in Sources */,
 				7E8CA6232B64C4E9006A2ABE /* Color+Extensions.swift in Sources */,
@@ -1342,7 +1350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.4;
+				CURRENT_PROJECT_VERSION = 3.6;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;
@@ -1373,7 +1381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.4;
+				CURRENT_PROJECT_VERSION = 3.6;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelCoach/Preview Content\"";
 				DEVELOPMENT_TEAM = ZLA3S7L9MF;
 				ENABLE_PREVIEWS = YES;

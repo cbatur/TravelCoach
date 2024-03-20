@@ -3,66 +3,67 @@ import Combine
 
 final class AviationEdgeViewmodel: ObservableObject {
 
-    @Published var spinner = false
+    @Published var loading = false
     @Published var travelData = [TravelSection]()
-    
+    @Published var searchPerformed = false
+
     private var apiService = AviationEdgeAPIService()
     private var cancellable: AnyCancellable?
     
-    func getFlights(_ isMock: Bool = false, airlineSearchParams: AirlineSearchParams) {
-        if isMock {
-            getMockAEFlights()
-        } else {
-            getFlightsService(airlineSearchParams)
-        }
-    }
-
-    func getFlightsService(_ airlineSearchParams: AirlineSearchParams) {
-        self.cancellable = self.apiService.flightTrack(airlineSearchParams: airlineSearchParams)
-        .catch {_ in Just([]) }
-        .sink(receiveCompletion: { _ in }, receiveValue: {
-            self.migrateFlights($0)
-        })
-    }
-    
-    func getFutureFlights(_ futureFlightParams: AEFutureFlightParams, filterAirportCode: String) {
+    func getFutureFlights(
+        _ futureFlightParams: AEFutureFlightParams,
+        flightChecklist: FlightChecklist
+    ) {
+        let filterAirportCode = flightChecklist.arrivalCity?.codeIataCity ?? ""
+        searchPerformed = true
+        loading = true
         self.cancellable = self.apiService.futureFlights(futureFlightParams: futureFlightParams)
         .catch {_ in Just([]) }
         .sink(receiveCompletion: { _ in }, receiveValue: {
-            print("[Debug] f- \($0)")
+            self.loading = false
             self.migrateFutureFlights($0.filter({ flight in
                 flight.arrival.iataCode == filterAirportCode.lowercased() &&
                 !flight.airline.name.isEmpty
-            }))
+            }), flightChecklist: flightChecklist)
         })
     }
     
-    func getMockAEFlights() {
-        if let fileURL = Bundle.main.url(forResource: "AE_FlightStatus", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: fileURL)
-                
-                let flights = try JSONDecoder().decode([FlightInformation].self, from: data)
-                self.migrateFlights(flights)
-            } catch {
-                print("Error reading or parsing AE_FlightStatus.JSON: \(error.localizedDescription)")
-            }
-        } else {
-            print("JSON file not found.")
+    func getCachedFlightsSearch() -> [FlightChecklist] {
+        if let savedObjects = UserDefaults.standard.object(forKey: "cachedFlights") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedObjects = try? decoder.decode([FlightChecklist].self, from: savedObjects) {
+                return loadedObjects
+            } else { return [] }
+        } else { return [] }
+    }
+    
+    func setFlightChecklist(_ f: FlightChecklist) {
+        var flightChecklist = getCachedFlightsSearch()
+        flightChecklist.append(f)
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(flightChecklist) {
+            UserDefaults.standard.set(encoded, forKey: "cachedFlights")
         }
     }
     
-    func migrateFutureFlights(_ flights: [AEFutureFlight]) {
+    func migrateFutureFlights(
+        _ flights: [AEFutureFlight],
+        flightChecklist: FlightChecklist
+    ) {
+        if flights.count > 0 {
+            setFlightChecklist(flightChecklist)
+        }
+        
         var travelItems = [TravelItem]()
         for f in flights {
             
             let formattedAirlineName = f.airline.name.capitalizedFirstLetter()
-            let subtitle = "\(f.airline.iataCode.uppercased()) \(f.flight.number) (\(f.airline.icaoCode.uppercased()) - \(formattedAirlineName))"
+            let subtitle = "\(f.airline.iataCode.uppercased()) \(f.flight.number) (\(f.airline.icaoCode.uppercased()) ➔ \(formattedAirlineName))"
             
             travelItems.append(
                 TravelItem(
                     iconName: "airplane.departure",
-                    title: "\(f.departure.iataCode) - \(f.arrival.iataCode)",
+                    title: "\(f.departure.iataCode) ➔ \(f.arrival.iataCode)",
                     subtitle: subtitle,
                     scheduledTime: f.arrival.scheduledTime
                 )
@@ -71,28 +72,7 @@ final class AviationEdgeViewmodel: ObservableObject {
         
         travelData.append(
             TravelSection(
-                title: "WED, JUN 2024",
-                items: travelItems
-            )
-        )
-    }
-    
-    func migrateFlights(_ flights: [FlightInformation]) {
-        var travelItems = [TravelItem]()
-        for f in flights {
-            travelItems.append(
-                TravelItem(
-                    iconName: "airplane.departure",
-                    title: "\(f.departure.iataCode) - \(f.arrival.iataCode)",
-                    subtitle: "\(f.airline.iataCode) \(f.flight.number) (\(f.airline.icaoCode) - \(f.airline.name)",
-                    scheduledTime: f.arrival.scheduledTime
-                )
-            )
-        }
-        
-        travelData.append(
-            TravelSection(
-                title: "WED, JUN 2024",
+                title: "\(formatDateDisplay(flightChecklist.flightDate ?? Date()))",
                 items: travelItems
             )
         )
@@ -100,5 +80,14 @@ final class AviationEdgeViewmodel: ObservableObject {
     
     func resetSearchFlights() {
         self.travelData = []
+    }
+    
+    func deActivateSearch() {
+        searchPerformed = false
+        self.travelData = []
+    }
+    
+    func clearCachedFlightSearches() {
+        UserDefaults.standard.removeObject(forKey: "cachedFlights")
     }
 }
