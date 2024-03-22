@@ -3,9 +3,13 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     var body: some View {
-        Image("launch_image") // Replace "launchImage" with the name of your image asset
-            .resizable()
-            .scaledToFit()
-            .background(Color.white) // Set a background color
+        GeometryReader { geometry in
+            Image("launch_image_1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: geometry.size.width)
+                .clipped()
+                .edgesIgnoringSafeArea(.all)
+        }
     }
 }

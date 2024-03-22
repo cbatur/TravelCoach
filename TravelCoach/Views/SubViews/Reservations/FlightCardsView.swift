@@ -60,20 +60,23 @@ struct AirportCardBasic: View {
                         .frame(width: 23, height: 23)
                         .frame(alignment: .top)
                         .clipShape(Circle())
-                VStack {
-                    Text(airport.codeIataAirport)
-                        .font(.custom("Gilroy-Bold", size: 19))
-                        .foregroundColor(Color.wbPinkMediumAlt)
-                    
-                    Text("\(airport.nameCountry)")
-                        .font(.custom("Gilroy-Bold", size: 17))
-                        .foregroundColor(Color.gray)
-                }
                 
+                Text(airport.codeIataAirport)
+                    .font(.custom("Gilroy-Bold", size: 19))
+                    .foregroundColor(Color.wbPinkMediumAlt)
             }
+            
+            Text("\(airport.timezone.split(separator: Character("/")).map(String.init).last ?? airport.codeIataAirport)-")
+                .font(.custom("Gilroy-Medium", size: 17))
+                .foregroundColor(Color.gray) +
+            
+            Text("\(airport.nameCountry)")
+                .font(.custom("Gilroy-Bold", size: 17))
+                .foregroundColor(Color.gray)
+            
         }
         .padding()
         .cardStyle(.white)
-        .frame(maxWidth: .infinity)
+        //.frame(maxWidth: .infinity)
     }
 }

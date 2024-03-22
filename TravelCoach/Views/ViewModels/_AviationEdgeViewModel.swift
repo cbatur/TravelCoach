@@ -4,7 +4,7 @@ import Combine
 final class AviationEdgeViewmodel: ObservableObject {
 
     @Published var loading: Bool = false
-    @Published var travelData = [TravelSection]()
+    @Published var travelData = TravelSection(title: "", items: [])
     @Published var searchPerformed = false
     @Published var cachedFlights = [FlightChecklist]()
 
@@ -29,12 +29,20 @@ final class AviationEdgeViewmodel: ObservableObject {
         })
     }
     
+    func removeOlderRecords() {
+        // Keeps the last 7 records, removes the older ones.
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(Array(self.cachedFlights.prefix(6))) {
+            UserDefaults.standard.set(encoded, forKey: "cachedFlights")
+        }
+    }
+    
     func getCachedFlightsSearch() {
         if let savedObjects = UserDefaults.standard.object(forKey: "cachedFlights") as? Data {
             let decoder = JSONDecoder()
             if let loadedObjects = try? decoder.decode([FlightChecklist].self, from: savedObjects) {
                 self.cachedFlights = loadedObjects.reversed()
-                //return loadedObjects.reversed()
+                removeOlderRecords()
             } else { return }
         } else { return }
     }
@@ -82,21 +90,19 @@ final class AviationEdgeViewmodel: ObservableObject {
             )
         }
         
-        travelData.append(
-            TravelSection(
-                title: "\(formatDateDisplay(flightChecklist.flightDate ?? Date()))",
-                items: travelItems
-            )
+        self.travelData = TravelSection(
+            title: "\(formatDateDisplay(flightChecklist.flightDate ?? Date()))",
+            items: travelItems
         )
     }
     
     func resetSearchFlights() {
-        self.travelData = []
+        self.travelData = TravelSection(title: "", items: [])
     }
     
     func deActivateSearch() {
         searchPerformed = false
-        self.travelData = []
+        self.travelData = TravelSection(title: "", items: [])
     }
     
     func clearCachedFlightSearches() {

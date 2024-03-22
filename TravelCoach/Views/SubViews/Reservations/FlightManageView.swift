@@ -6,7 +6,6 @@ struct FlightManageView: View {
     @Environment(\.presentationMode) var presentationMode
     @Bindable var destination: Destination
     @StateObject var aviationEdgeViewmodel: AviationEdgeViewmodel = AviationEdgeViewmodel()
-    @StateObject var cryptoSwiftViewModel: CryptoSwiftViewModel = CryptoSwiftViewModel()
     @State private var flightDate = Date()
 
     @State private var launchSearchAirport: Bool = false
@@ -139,7 +138,7 @@ struct FlightManageView: View {
                         }
                 }
                 Divider()
-                Text("-\(cryptoSwiftViewModel.key)")
+
                 VStack {
                     ForEach(aviationEdgeViewmodel.cachedFlights) { f in
                         HStack {
@@ -165,8 +164,6 @@ struct FlightManageView: View {
         }
         .onAppear{
             self.aviationEdgeViewmodel.getCachedFlightsSearch()
-
-            cryptoSwiftViewModel.shuffleAPIKey()
         }
         .onChange(of: launchSearchResultsView) { _, _ in
             aviationEdgeViewmodel.getCachedFlightsSearch()
