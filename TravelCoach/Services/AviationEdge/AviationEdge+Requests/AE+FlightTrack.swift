@@ -9,10 +9,11 @@ struct AirlineSearchParams {
 extension AERequests {
     struct FlightTrack {
         var airlineSearchParams: AirlineSearchParams
-        var apiKey: String = "ba7baa-a8f425"
         
         var request: URLRequest {
             var components = URLComponents(string: "https://aviation-edge.com/v2/public/flights")
+            
+            guard let apiKey = decryptAPIKey(.avionEdge) else { preconditionFailure("Bad API Key") }
             
             var queryItems: [URLQueryItem] = [URLQueryItem(name: "key", value: apiKey)]
             

@@ -4,10 +4,11 @@ import Foundation
 extension AERequests {
     struct Autocomplete {
         var city: String
-        var apiKey: String = "ba7baa-a8f425"
         
         var request: URLRequest {
             var components = URLComponents(string: "https://aviation-edge.com/v2/public/autocomplete")
+            
+            guard let apiKey = decryptAPIKey(.avionEdge) else { preconditionFailure("Bad API Key") }
             
             let queryItems: [URLQueryItem] = [
                 URLQueryItem(name: "key", value: apiKey),

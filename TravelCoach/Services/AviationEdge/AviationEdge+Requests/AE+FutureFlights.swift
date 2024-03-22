@@ -44,10 +44,11 @@ struct AEFutureFlightParams {
 extension AERequests {
     struct FutureFlights {
         var futureFlightParams: AEFutureFlightParams
-        var apiKey: String = "ba7baa-a8f425"
         
         var request: URLRequest {
             var components = URLComponents(string: "https://aviation-edge.com/v2/public/flightsFuture")
+            
+            guard let apiKey = decryptAPIKey(.avionEdge) else { preconditionFailure("Bad API Key") }
             
             var queryItems: [URLQueryItem] = [URLQueryItem(name: "key", value: apiKey)]
             queryItems.append(URLQueryItem(name: "iataCode", value: self.futureFlightParams.iataCode))

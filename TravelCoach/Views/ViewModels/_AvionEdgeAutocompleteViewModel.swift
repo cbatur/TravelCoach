@@ -6,9 +6,7 @@ class AvionEdgeAutocompleteViewModel: ObservableObject {
     @Published var query = ""
     @Published private(set) var suggestions: [AEAirport.AECity] = []
     private var cancellables = Set<AnyCancellable>()
-    
-    private let apiKey = "ba7baa-a8f425"
-    
+        
     init() {
         $query
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
@@ -25,6 +23,9 @@ class AvionEdgeAutocompleteViewModel: ObservableObject {
     }
     
     private func fetchAutocomplete(_ query: String) -> AnyPublisher<[AEAirport.AECity], Error> {
+        
+        guard let apiKey = decryptAPIKey(.avionEdge) else { preconditionFailure("Bad API Key") }
+        
         let urlString = "https://aviation-edge.com/v2/public/autocomplete?city=\(query)&key=\(apiKey)"
         
         guard let url = URL(string: urlString) else {
