@@ -1,6 +1,5 @@
 
 import Foundation
-import CryptoSwift
 
 enum Requests {
     case chatAPIGetQuestion(qType: QCategory)
@@ -69,38 +68,12 @@ enum Requests {
         return request
     }
     
-    func decryptAPIKey() -> String? {
-        let keyHex = Configuration.openAI.keyHex
-        let ivHex = Configuration.openAI.ivHex
-        let encryptedBase64 = Configuration.openAI.encryptedBase64
-        
-        do {
-            let key = Array<UInt8>(hex: keyHex)
-            let iv = Array<UInt8>(hex: ivHex)
-
-            guard let encryptedBytes = Data(base64Encoded: encryptedBase64)?.bytes else {
-                return nil
-            }
-
-            let aes = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs7)
-            let decryptedBytes = try aes.decrypt(encryptedBytes)
-
-            if let decryptedString = String(bytes: decryptedBytes, encoding: .utf8) {
-                return decryptedString
-            } else {
-                return nil
-            }
-        } catch {
-            return nil
-        }
-    }
-    
     var requestOpenAI: URLRequest {
         
         let path = "\(Configuration.openAI.apiOpenAI)\(self.path)"
         guard let url = URL(string: path) else { preconditionFailure("Bad URL") }
         
-        guard let openAPIKey = decryptAPIKey() else { preconditionFailure("Bad API Key") }
+        guard let openAPIKey = decryptAPIKey(.openAI) else { preconditionFailure("Bad API Key") }
         
         let jsonString = """
         {
@@ -140,7 +113,7 @@ enum Requests {
           }
         """
 
-        guard let openAPIKey = decryptAPIKey() else { preconditionFailure("Bad API Key") }
+        guard let openAPIKey = decryptAPIKey(.openAI) else { preconditionFailure("Bad API Key") }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

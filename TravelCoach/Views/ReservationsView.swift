@@ -2,41 +2,22 @@
 import SwiftUI
 
 struct ReservationsView: View {
-//    let travelData: [TravelSection] = [
-//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: ""),
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-//        ]),
-//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-//        ]),
-//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-//        ]),
-//        TravelSection(title: "FRIDAY, DECEMBER 1, 2023", items: [
-//            TravelItem(iconName: "airplane.departure", title: "YYZ - WAW", subtitle: "LO 46 (LOT - Polish Airlines)"),
-//            TravelItem(iconName: "clock", title: "6 hrs 55 mins layover in WAW", subtitle: "")
-//        ])
-//    ]
-    
-    
-    
     var travelData: [TravelSection] = []
-
+    @State var hideEmptyScreen: Bool = true
+    
     init(_ travelData: [TravelSection]) {
         self.travelData = travelData
+        hideEmptyScreen = travelData.count == 0
     }
     
     var body: some View {
         NavigationView {
             VStack {
 
+                Image("no-flights-found-b")
+                    .resizable()
+                    .scaledToFit()
+                    .background(Color.white)
                 
                 List {
                     ForEach(travelData) { section in

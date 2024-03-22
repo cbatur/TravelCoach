@@ -28,10 +28,15 @@ struct SelectFlightResultsView: View {
             if let d = flightCheckList.departureCity, let a = flightCheckList.arrivalCity {
                 HStack {
                     AirportCardBasic(airport: d)
+                        .frame(maxWidth: .infinity)
+                    
                     Text("➔")
                         .font(.largeTitle)
                         .foregroundColor(.gray.opacity(0.6))
+                        .frame(width: 50)
+                    
                     AirportCardBasic(airport: a)
+                        .frame(maxWidth: .infinity) 
                 }
             }
             
@@ -65,5 +70,4 @@ extension SelectFlightResultsView {
     private func subHeaderCities() -> String {
         return "\(flightCheckList.departureCity?.nameAirport ?? "") ➔  \(flightCheckList.arrivalCity?.nameAirport ?? "")"
     }
-    
 }

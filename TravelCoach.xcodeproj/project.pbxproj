@@ -56,8 +56,8 @@
 		7E711D582BA68E050002FC3D /* Gilroy-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */; };
 		7E711D592BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */; };
 		7E711D5B2BA698140002FC3D /* BannerWithDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */; };
-		7E711D5D2BAA9CD90002FC3D /* RecentFlightSearchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */; };
 		7E711D5F2BAAA32A0002FC3D /* AirportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D5E2BAAA32A0002FC3D /* AirportType.swift */; };
+		7E711D612BAC02500002FC3D /* FlightCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E711D602BAC02500002FC3D /* FlightCardsView.swift */; };
 		7E8218D82B92EE030090AA15 /* NavigationToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */; };
 		7E8218DA2B92F46C0090AA15 /* AddDestinationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */; };
 		7E8218DF2B92F4F80090AA15 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8218DE2B92F4F80090AA15 /* AccountView.swift */; };
@@ -249,8 +249,8 @@
 		7E711D432BA68E050002FC3D /* Gilroy-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLight.ttf"; sourceTree = "<group>"; };
 		7E711D442BA68E050002FC3D /* Gilroy-UltraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gilroy-UltraLightItalic.ttf"; sourceTree = "<group>"; };
 		7E711D5A2BA698140002FC3D /* BannerWithDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerWithDismiss.swift; sourceTree = "<group>"; };
-		7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentFlightSearchesView.swift; sourceTree = "<group>"; };
 		7E711D5E2BAAA32A0002FC3D /* AirportType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportType.swift; sourceTree = "<group>"; };
+		7E711D602BAC02500002FC3D /* FlightCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCardsView.swift; sourceTree = "<group>"; };
 		7E8218D72B92EE030090AA15 /* NavigationToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationToolbar.swift; sourceTree = "<group>"; };
 		7E8218D92B92F46C0090AA15 /* AddDestinationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDestinationButton.swift; sourceTree = "<group>"; };
 		7E8218DE2B92F4F80090AA15 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -452,7 +452,7 @@
 			children = (
 				7E1038412B9CD70A00544775 /* FlightManageView.swift */,
 				7E711D2B2BA2BDD20002FC3D /* SelectFlightsResultsView.swift */,
-				7E711D5C2BAA9CD90002FC3D /* RecentFlightSearchesView.swift */,
+				7E711D602BAC02500002FC3D /* FlightCardsView.swift */,
 			);
 			path = Reservations;
 			sourceTree = "<group>";
@@ -1115,6 +1115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E711D612BAC02500002FC3D /* FlightCardsView.swift in Sources */,
 				7E8CA62E2B68A129006A2ABE /* APIServices.swift in Sources */,
 				7E8CA61F2B643D73006A2ABE /* CalendarModals.swift in Sources */,
 				7E8CA6392B68A50A006A2ABE /* _ChatAPIViewModel.swift in Sources */,
@@ -1134,7 +1135,6 @@
 				7E9B9B772B74941A003D8607 /* TripsView.swift in Sources */,
 				7E711D282BA171750002FC3D /* AvionModels.swift in Sources */,
 				7E8CA64E2B6D6A94006A2ABE /* _PlacesViewModel.swift in Sources */,
-				7E711D5D2BAA9CD90002FC3D /* RecentFlightSearchesView.swift in Sources */,
 				7E8CA5E42B6223E3006A2ABE /* TravelCoachApp.swift in Sources */,
 				7E8CA6522B6D7F2B006A2ABE /* Strings+Extensions.swift in Sources */,
 				7E9B9B792B749851003D8607 /* Destination.swift in Sources */,

@@ -6,16 +6,16 @@ struct FlightManageView: View {
     @Environment(\.presentationMode) var presentationMode
     @Bindable var destination: Destination
     @StateObject var aviationEdgeViewmodel: AviationEdgeViewmodel = AviationEdgeViewmodel()
+    @StateObject var cryptoSwiftViewModel: CryptoSwiftViewModel = CryptoSwiftViewModel()
     @State private var flightDate = Date()
 
     @State private var launchSearchAirport: Bool = false
     @State private var launchSearchResultsView: Bool = false
-    @State private var isArrivalActive: Bool = false
-    @State private var enlargeSearchPanel: Bool = true
         
     @State private var departureCity: AEAirport.AECity?
     @State private var arrivalCity: AEAirport.AECity?
     @State private var airportType: AirportType = .departure
+    @State private var cachedFlights: [FlightChecklist] = []
 
     init(destination: Destination) {
         _destination = Bindable(wrappedValue: destination)
@@ -32,135 +32,90 @@ struct FlightManageView: View {
                 .padding()
                 .padding(.top, 10)
                 
-                DatePicker("FLIGHT DATE", selection: $flightDate, in: Date()..., displayedComponents: .date)
+                  DatePicker(flightDate <= Date() ? "SELECT A FUTURE DATE ➔" : "FLIGHT DATE", selection: $flightDate, in: Date()..., displayedComponents: .date)
                     .font(.custom("Satoshi-Bold", size: 15))
                     .padding(.leading, 15)
-                    .foregroundColor(.gray)
+                    .foregroundColor(flightDate <= Date() ? .red : .gray)
                     .background(Color.white)
                     .cornerRadius(9)
                 
                 VStack {
                     VStack {
                         HStack {
-                            Button(action: {
-                                enlargeSearchPanel.toggle()
-                            }) {
-                                HStack {
-                                    Image(systemName: enlargeSearchPanel ? "chevron.up" : "chevron.down")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 20, height: 20)
+                            Button {
+                                launchSearchAirport = true
+                                airportType = .departure
+                            } label: {
+                                if let departureCity = departureCity {
+                                    AirportCard(airport: departureCity)
+                                } else {
+                                    Image(systemName: "airplane.departure")
+                                        .foregroundColor(.gray.opacity(0.4))
+                                        .font(.largeTitle)
+                                        .frame(width: 45)
+                                    
+                                    VStack {
+                                        Text(departureStatus().0.uppercased())
+                                            .font(.custom("Gilroy-Bold", size: 18))
+                                            .foregroundColor(Color.black.opacity(0.7))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                    }
+                                    .padding()
+                                    
+                                    Spacer()
+                                    Image(systemName: "chevron.forward")
                                         .foregroundColor(.gray)
+                                        .font(.subheadline)
                                 }
                             }
-                            .isHidden(isNotReadyForSearch())
-                            .disabled(isNotReadyForSearch())
-                            
-                            Text(enlargeSearchPanel ? "" : airportCodesHeader())
-                                .foregroundColor(.wbPinkMedium)
-                                .font(.custom("Gilroy-Medium", size: 18))
                         }
                         
-                        if (enlargeSearchPanel) {
-     
-                            Divider()
-                            
-                            HStack {
-                                Image(systemName: "clock.arrow.circlepath")
-                                    .foregroundColor(flightDate < Date() ? .gray.opacity(0.4) : .green)
-                                    .font(.largeTitle)
-                                    .frame(width: 45)
-                                
-                                VStack {
-                                    if flightDate < Date() {
-                                        Text("SELECT A FUTURE DATE")
-                                            .font(.custom("Gilroy-Bold", size: 18))
-                                            .foregroundColor(Color.gray)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    } else {
-                                        Text(formatDateDisplay(flightDate))
-                                            .font(.custom("Gilroy-Medium", size: 22))
-                                            .foregroundColor(Color.green)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
-                                    }
-                                }
-                                
-                            }
-                            
-                            Divider()
-                            
-                            HStack {
-                                Button {
-                                    launchSearchAirport = true
-                                    airportType = .departure
-                                } label: {
-                                    if let departureCity = departureCity {
-                                        AirportCard(airport: departureCity)
-                                    } else {
-                                        Image(systemName: "airplane.departure")
-                                            .foregroundColor(.gray.opacity(0.4))
-                                            .font(.largeTitle)
-                                            .frame(width: 45)
-                                        
-                                        VStack {
-                                            Text(departureStatus().0.uppercased())
-                                                .font(.custom("Gilroy-Bold", size: 18))
-                                                .foregroundColor(Color.black.opacity(0.7))
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                        }
-                                        .padding()
-                                        
-                                        Spacer()
-                                        Image(systemName: "chevron.forward")
-                                            .foregroundColor(.gray)
-                                            .font(.subheadline)
-                                    }
-                                }
-                            }
-                            
-                            Divider()
-                            
-                            HStack {
-                                Button {
-                                    launchSearchAirport = true
-                                    airportType = .arrival
-                                } label: {
-                                    if let arrivalCity = arrivalCity {
-                                        AirportCard(airport: arrivalCity)
-                                    } else {
-                                        Image(systemName: "airplane.arrival")
-                                            .foregroundColor(.gray.opacity(0.4))
-                                            .font(.largeTitle)
-                                            .frame(width: 45)
-                                        
-                                        VStack {
-                                            Text(arrivalStatus().0.uppercased())
-                                                .font(.custom("Gilroy-Bold", size: 18))
-                                                .foregroundColor(Color.black.opacity(0.7))
-                                                .frame(maxWidth: .infinity, alignment: .leading)
-                                            
-                                        }
-                                        .padding()
-                                        
-                                        Spacer()
-                                        Image(systemName: "chevron.forward")
-                                            .foregroundColor(.gray)
-                                            .font(.subheadline)
-                                    }
-                                }
-                            }
-                            
-                            Divider()
-                            
+                        Divider()
+                        
+                        HStack {
                             Button {
-                                searchFutureFlights()
+                                launchSearchAirport = true
+                                airportType = .arrival
                             } label: {
-                                Text("SEARCH FOR FLIGHTS")
+                                if let arrivalCity = arrivalCity {
+                                    AirportCard(airport: arrivalCity)
+                                } else {
+                                    Image(systemName: "airplane.arrival")
+                                        .foregroundColor(.gray.opacity(0.4))
+                                        .font(.largeTitle)
+                                        .frame(width: 45)
+                                    
+                                    VStack {
+                                        Text(arrivalStatus().0.uppercased())
+                                            .font(.custom("Gilroy-Bold", size: 18))
+                                            .foregroundColor(Color.black.opacity(0.7))
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        
+                                    }
                                     .padding()
-                                    .cardStyle(.wbPinkShade)
+                                    
+                                    Spacer()
+                                    Image(systemName: "chevron.forward")
+                                        .foregroundColor(.gray)
+                                        .font(.subheadline)
+                                }
                             }
                         }
                     }
+                    Divider()
+                    Button {
+                        searchFutureFlights()
+                    } label: {
+                        Text("SEARCH")
+                            .padding(5)
+                            .padding(.leading, 6)
+                            .padding(.trailing, 6)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(isNotReadyForSearch() ? .black : .white)
+                            .cardStyle(.wbPinkMedium)
+                    }
+                    .disabled(isNotReadyForSearch())
+                    .opacity(isNotReadyForSearch() ? 0.3 : 1.0)
                 }
                 .padding()
                 .cardStyle(.white)
@@ -170,12 +125,63 @@ struct FlightManageView: View {
             
             Spacer()
             
-            RecentFlightSearchesView(aviationEdgeViewmodel, onSelectAction: setChecklist)
-                .isHidden(!self.aviationEdgeViewmodel.travelData.isEmpty)
+            VStack {
+                HStack {
+                    Text("Recent Searches".uppercased())
+                        .font(.custom("Gilroy-Medium", size: 14))
+                        .foregroundColor(.gray)
+                    Spacer()
+                    Text("Clear")
+                        .font(.custom("Gilroy-Medium", size: 14))
+                        .foregroundColor(.accentColor)
+                        .onTapGesture {
+                            aviationEdgeViewmodel.clearCachedFlightSearches()
+                        }
+                }
+                Divider()
+                Text("-\(cryptoSwiftViewModel.key)")
+                VStack {
+                    ForEach(aviationEdgeViewmodel.cachedFlights) { f in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(f.departureCity?.codeIataAirport ?? "") ➔ \(f.departureCity?.nameAirport ?? "")")
+                                    .font(.caption)
+                                Text("\(f.arrivalCity?.codeIataAirport ?? "") ➔ \(f.arrivalCity?.nameAirport ?? "")")
+                                    .font(.caption)
+                            }
+                            Spacer()
+                            Text("\(f.flightDate ?? Date(), style: .date)")
+                                .font(.subheadline)
+                        }
+                        .onTapGesture {
+                            setChecklist(f)
+                        }
+                        .padding(.bottom, 5)
+                        Divider()
+                    }
+                }
+            }
+            .padding()
+        }
+        .onAppear{
+            self.aviationEdgeViewmodel.getCachedFlightsSearch()
 
+            cryptoSwiftViewModel.shuffleAPIKey()
+        }
+        .onChange(of: launchSearchResultsView) { _, _ in
+            aviationEdgeViewmodel.getCachedFlightsSearch()
         }
         .background(Color.gray.opacity(0.11))
         .opacity(launchSearchAirport ? 0.2 : 1.0)
+        .sheet(isPresented: $launchSearchResultsView) {
+            let futureFlightsParams = AEFutureFlightParams(
+                iataCode: departureCity?.codeIataAirport ?? "",
+                type: "departure",
+                date: formatDateParameter(flightDate)
+            )
+            
+            SelectFlightResultsView(flightCheckList: flightCheckList(), futureFlightsParams: futureFlightsParams)
+        }
         .popover(
             present: $launchSearchAirport,
             attributes: {
@@ -204,26 +210,6 @@ struct FlightManageView: View {
             )
             .frame(maxWidth: 500, maxHeight: 700, alignment: .top)
         }
-        .onChange(of: self.flightDate) { _, newDate in
-            self.aviationEdgeViewmodel.deActivateSearch()
-        }
-        .onChange(of: self.aviationEdgeViewmodel.searchPerformed) { _, searchActive in
-            enlargeSearchPanel = !searchActive
-        }
-        .onChange(of: enlargeSearchPanel) { _, value in
-            if value {
-                self.aviationEdgeViewmodel.deActivateSearch()
-            }
-        }
-        .sheet(isPresented: $launchSearchResultsView) {
-            let futureFlightsParams = AEFutureFlightParams(
-                iataCode: departureCity?.codeIataAirport ?? "",
-                type: "departure",
-                date: formatDateParameter(flightDate)
-            )
-            
-            SelectFlightResultsView(flightCheckList: flightCheckList(), futureFlightsParams: futureFlightsParams)
-        }
     }
 }
 
@@ -232,9 +218,7 @@ extension FlightManageView {
     func setChecklist(_ f: FlightChecklist) {
         self.departureCity = f.departureCity
         self.arrivalCity = f.arrivalCity
-        self.flightDate = f.flightDate ?? Date()
-        
-        searchFutureFlights()
+        self.flightDate = f.flightDate ?? Date()        
     }
     
     func searchFutureFlights() {
@@ -403,79 +387,4 @@ struct SearchAirportPopover: View {
             }
         }
     }
-}
-
-struct AirportCard: View {
-    var airport: AEAirport.AECity
-    
-    var body: some View {
-        HStack {
-            VStack {
-                HStack {
-                    Image(airport.nameCountry)
-                        .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 26, height: 26)
-                            .clipShape(Circle())
-                    VStack {
-                        Text(airport.nameAirport)
-                            .font(.custom("Gilroy-Medium", size: 19))
-                            .foregroundColor(Color.black)
-                            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 20, alignment: .leading)
-                        
-                        HStack {
-                            Text("\(airport.nameCountry)")
-                                .font(.custom("Gilroy-Bold", size: 17))
-                                .foregroundColor(Color.gray)
-                            
-                            Text("\(airport.timezone)")
-                                .font(.custom("Gilroy-Regular", size: 16))
-                                .foregroundColor(Color.gray)
-                        }
-                    }
-                }
-            }
-            .padding()
-            
-            Text(airport.codeIataAirport)
-                .font(.custom("Gilroy-Bold", size: 20))
-                .foregroundColor(Color.wbPinkMediumAlt)
-        }
-        .padding()
-        .cardStyle(.white)
-    }
-}
-
-struct AirportCardBasic: View {
-    var airport: AEAirport.AECity
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Image(airport.nameCountry)
-                    .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 26)
-                        .clipShape(Circle())
-                
-                Text(airport.codeIataAirport)
-                    .font(.custom("Gilroy-Bold", size: 20))
-                    .foregroundColor(Color.wbPinkMediumAlt)
-            }
-            
-            Text("\(airport.nameCountry)")
-                .font(.custom("Gilroy-Bold", size: 17))
-                .foregroundColor(Color.gray)
-        }
-        .padding()
-        .cardStyle(.white)
-    }
-}
-
-struct FlightChecklist: Decodable, Encodable, Identifiable {
-    var id = UUID()
-    
-    let departureCity: AEAirport.AECity?
-    let arrivalCity: AEAirport.AECity?
-    let flightDate: Date?
 }

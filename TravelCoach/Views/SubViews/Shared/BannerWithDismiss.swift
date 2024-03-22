@@ -27,6 +27,7 @@ struct BannerWithDismiss: View {
                             .foregroundColor(.gray)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.headline)
+                            .lineLimit(nil)
                             .isHidden(subHeadline == nil)
                     }
                     .padding(.top, 6)

@@ -8,8 +8,6 @@ class GooglePlacesViewModel: ObservableObject {
     @Published var photosData: [String] = []
     private var cancellables = Set<AnyCancellable>()
     
-    private let apiKey = "AIzaSyDgMjCGzr5jeGgsNtq3XRmFunlpmSGIT9Y"
-    
     init() {
         $query
             .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
@@ -26,6 +24,9 @@ class GooglePlacesViewModel: ObservableObject {
     }
     
     private func fetchAutocomplete(_ query: String) -> AnyPublisher<[GooglePlacesResponse.Prediction], Error> {
+        
+        guard let apiKey = decryptAPIKey(.googlePlaces) else { preconditionFailure("Bad API Key") }
+
         let urlString = "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=\(query)&types=(cities)&key=\(apiKey)"
         
         guard let url = URL(string: urlString) else {
@@ -56,6 +57,9 @@ class GooglePlacesViewModel: ObservableObject {
 
     // Function to fetch place details using Google Places API
     func fetchPlaceDetails(placeId: String) {
+        
+        guard let apiKey = decryptAPIKey(.googlePlaces) else { preconditionFailure("Bad API Key") }
+        
         let urlString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=\(apiKey)"
         guard let url = URL(string: urlString) else { return }
 
@@ -91,6 +95,8 @@ class GooglePlacesViewModel: ObservableObject {
                   let result = dictionary["result"] as? [String: Any],
                   let photos = result["photos"] as? [[String: Any]] else { return nil }
 
+            guard let apiKey = decryptAPIKey(.googlePlaces) else { preconditionFailure("Bad API Key") }
+            
             return photos.compactMap {
                 "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=\($0["photo_reference"] ?? "")&key=\(apiKey)" as? String
 

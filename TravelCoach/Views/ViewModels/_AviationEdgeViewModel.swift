@@ -3,9 +3,10 @@ import Combine
 
 final class AviationEdgeViewmodel: ObservableObject {
 
-    @Published var loading = false
+    @Published var loading: Bool = false
     @Published var travelData = [TravelSection]()
     @Published var searchPerformed = false
+    @Published var cachedFlights = [FlightChecklist]()
 
     private var apiService = AviationEdgeAPIService()
     private var cancellable: AnyCancellable?
@@ -28,20 +29,31 @@ final class AviationEdgeViewmodel: ObservableObject {
         })
     }
     
-    func getCachedFlightsSearch() -> [FlightChecklist] {
+    func getCachedFlightsSearch() {
         if let savedObjects = UserDefaults.standard.object(forKey: "cachedFlights") as? Data {
             let decoder = JSONDecoder()
             if let loadedObjects = try? decoder.decode([FlightChecklist].self, from: savedObjects) {
-                return loadedObjects
-            } else { return [] }
-        } else { return [] }
+                self.cachedFlights = loadedObjects.reversed()
+                //return loadedObjects.reversed()
+            } else { return }
+        } else { return }
     }
     
     func setFlightChecklist(_ f: FlightChecklist) {
-        var flightChecklist = getCachedFlightsSearch()
-        flightChecklist.append(f)
+        getCachedFlightsSearch()
+        //var flightChecklist = getCachedFlightsSearch()
+        
+        if !self.cachedFlights.contains(where: {
+            $0.flightDate == f.flightDate &&
+            $0.arrivalCity?.codeIataAirport == f.arrivalCity?.codeIataAirport &&
+            $0.departureCity?.codeIataAirport == f.departureCity?.codeIataAirport
+        }) {
+            self.cachedFlights.append(f)
+        }
+
+        //cachedFlights = flightChecklist
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(flightChecklist) {
+        if let encoded = try? encoder.encode(self.cachedFlights) {
             UserDefaults.standard.set(encoded, forKey: "cachedFlights")
         }
     }
@@ -89,5 +101,6 @@ final class AviationEdgeViewmodel: ObservableObject {
     
     func clearCachedFlightSearches() {
         UserDefaults.standard.removeObject(forKey: "cachedFlights")
+        cachedFlights = []
     }
 }

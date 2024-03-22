@@ -25,6 +25,12 @@ enum Configuration {
         static let apiKey = "ba7baa-a8f425"
     }
     
+    enum GooglePlaces {
+        static let keyHex = "0f018542ac21547c31bbd51f2626962e"
+        static let ivHex = "6fb32dd1797ba80a702288554ec27bef"
+        static let encryptedBase64 = "essey31h0rzWHbrCBVRCpf86clyd2m2DsVUFf7DGPp6erIRIB09t/4Mm7C/YpgEY"
+    }
+    
     enum Links {
         static let agreementsURL = URL(string: "\(environment)agreements/termsagreements.php")!
         static let privacyPolicyURL = URL(string: "\(environment)agreements/privacypolicy.php")!
@@ -32,5 +38,4 @@ enum Configuration {
         static let privacyTitle = "Privacy Policy"
         static let rateThisAppTitle = "Rate This App"
     }
-    
 }
